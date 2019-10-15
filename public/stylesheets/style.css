@@ -1,0 +1,428 @@
+/* GENERAL STYLES */
+
+body { 
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  font-size: 35px;
+  font-weight: 100;
+  color: #333;
+}
+
+h2{
+  font-size: 25px;
+  font-weight: 100;
+  color: #333;
+}
+
+a {
+  color: #3da9f4;
+  text-decoration: none;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* WORKSHOP PAGES */
+
+/* WORKSHOP CARDS */
+ul.workshop-list {
+  list-style: none;
+  text-align: center;
+  padding-left: 0px;
+}
+
+li.workshop-card {
+  display: inline-block;
+  background-color: #fff;
+  width: 150px;
+  vertical-align: top;
+  margin: 12px;
+  padding: 20px 50px;
+  border-style: solid;
+  border-width: .5px;
+  border-color: #ccc;
+  text-align: center;
+}
+
+li.workshop-card p {
+  color: #888;
+  
+}
+
+li.workshop-card a {
+  text-decoration: none;
+  margin-top: 12px;
+}
+
+li.workshop-card a p{
+  color: #fff;
+  background-color: #f99800;
+  width: 100px;
+  height: 30px;
+  margin: 0 auto;
+  padding-top: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+li.workshop-card h4 {
+  color: #333;
+  font-size: 16px;
+  margin: 10px auto;
+}
+
+li.workshop-card h4.host-site-title {
+  margin-top: 35px;
+}
+
+/* WORKSHOP FILTERS */
+.workshop-filters {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: space-between;
+  justify-content: center;
+}
+
+.workshop-filters div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  margin: 0px 12px;
+}
+
+select {
+	font-size: 16px;
+	color: #fff;
+	line-height: 1.3;
+	padding: .6em 1.4em .5em .8em;
+	width: 200px;
+	margin: 0 20px;;
+	border-radius: 5px;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: #fff;
+	background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+	  linear-gradient(to bottom, #3da9f4 0%,#3da9f4 100%);
+	background-repeat: no-repeat, repeat;
+	background-position: right .7em top 50%, 0 0;
+  background-size: .65em auto, 100%;
+}
+select::-ms-expand {
+	display: none;
+}
+select :hover {
+	border-color: #888;
+}
+select :focus {
+	border-color: #aaa;
+	box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+	box-shadow: 0 0 0 3px -moz-mac-focusring;
+	color: #222;
+	outline: none;
+}
+select option {
+	font-weight:normal;
+}
+
+button {
+  width: 150px;
+  background-color: #3793e3;
+  color: white;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+/* Affiliate Cards */
+div.affiliate {
+  text-align: center;
+}
+
+ul.affiliate-list {
+  list-style: none;
+  text-align: center;
+}
+
+li.affiliate-card {
+  display: inline-block;
+  background-color: #fff;
+  width: 200px;
+  vertical-align: top;
+  margin: 12px;
+  padding: 20px 50px;
+  border-style: solid;
+  border-width: .5px;
+  border-color: #ccc;
+  text-align: center;
+}
+
+li.affiliate-card img {
+  width: 200px;
+}
+
+li.affiliate-card a {
+  text-decoration: none;
+  margin-top: 12px;
+}
+
+li.affiliate-card a p{
+  color: #fff;
+  background-color: #f99800;
+  width: 100px;
+  height: 30px;
+  margin: 0 auto;
+  padding-top: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+div.affiliate-summary {
+  display:inline-block;
+  width: 40%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+div.affiliate-summary p {
+  color: #888;
+}
+
+div.affiliate-summary a p {
+  color: #3793e3;
+}
+
+div.affiliate-info {
+  display:inline-block;
+  width: 40%;
+  vertical-align: middle;
+}
+
+div.affiliate-info img{
+  width: 60%;
+}
+
+div.affiliate-info h3{
+  color: #888;
+  font-size: 16px;
+}
+
+@media only screen and (max-width: 900px) {
+  div.affiliate-summary {
+    width: 100%;
+  }
+
+  div.affiliate-summary p{
+    padding: 0 50px;
+  }
+
+  div.affiliate-info {
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+    
+  }
+}
+
+h1.certified-facilitators {
+  text-align: center;
+  background-color: #3793e3;
+  color: white;
+  height: 75px;
+  padding-top: 25px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 75px;
+}
+
+ul.facilitator-list {
+  list-style: none;
+  text-align: center;
+}
+
+li.facilitator-card {
+  display: inline-block;
+  width: 90%;
+  vertical-align: top;
+  margin: 12px;
+  padding: 20px 5px;
+  border-style: solid;
+  border-width: .5px;
+  border-color: #ccc;
+  text-align: center;
+}
+
+li.facilitator-card div {
+  width: 50%;
+  display: inline-block;
+
+}
+
+li.facilitator-card img {
+  width: 300px;
+  display: inline-block;
+  margin: 0px 20px;
+  vertical-align: top;
+  margin-top: 3%;
+}
+
+div.facilitator-info {
+  padding-left: 50px;
+}
+
+div.facilitator-info p {
+  color: #888;
+  font-size: 16px;
+}
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* EVENT PAGES */
+div.event-card {
+  padding: 20px 25px;
+  border: solid .5px #bbb;
+  margin: 25px 0px;
+  background-color: #fff;
+}
+
+div.event-card img {
+  display: inline-block;
+  width: 40%;
+}
+
+div.event-card div {
+  display: inline-block;
+  width: 40%;
+  padding-left: 10%;
+  vertical-align: top;
+}
+
+div.event-card div p {
+  color: #999;
+}
+
+div.event-card div a {
+  text-decoration: none;
+  margin-top: 12px;
+}
+
+div.event-card div a p {
+  color: #eee;
+  background-color: #f99800;
+  width: 100px;
+  height: 30px;
+  margin: 0 auto;
+  padding-top: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* AWARD PAGES & ABOUT PAGES*/
+
+/* SHINGO RECIPIENTS */
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 85%;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.table-title {
+  font-size: 25px;
+
+}
+
+tr.row-headers {
+  font-weight: 600px;
+  font-size: 18px;
+  color: white;
+  background-color: #3793e3;
+}
+
+tr.row-headers th {
+  font-size: 16px;
+  color: white;
+  background-color: #3793e3;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+div.publication-award {
+  width: 90%;
+  margin: auto;
+}
+
+div.publication-award h3 {
+  color: #888;
+}
+
+div.publication-award a p {
+  background-color: #3793e3;
+  color: white;
+  width: 150px;
+  height: 32px;
+  text-align: center;
+  padding-top: 15px;
+  border-radius: 5px;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* ERROR PAGE */
+
+div.error-message {
+  text-align: center;
+}
+
+div.error-message h2 {
+  display: inline;
+  color: #888;
+}
+
+div.error-message a {
+  display: inline;
+  font-size: 25px;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------- */

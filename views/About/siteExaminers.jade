@@ -1,0 +1,40 @@
+extends ../layout 
+
+block content
+    table(align="center")
+        tr(class="row-headers")
+            td(colspan="3") Shingo Examiners Committee
+        tr
+            th Shaun Barker (Chair)
+            th Assistant Director
+            th Shingo Institute
+        tr
+            th Joanne Deys
+            th President
+            th Brightside Alliance, LLC
+        tr
+            th Bruce Hamilton
+            th President
+            th Greater Boston Manufacturing Partnership
+        tr
+            th Dale Lucht
+            th Master Coach
+            th Discover Financial Services
+        tr
+            th Mike Martyn
+            th Founder 
+            th SISU Consulting Group
+        tr
+            th Paul Terry
+            th VP Supply Chain
+            th O.C. Tanner Company
+        tr(class="row-headers")
+            th Examiner
+            th Position
+            th Company
+        each examiner in examiners
+            tr
+                th= examiner.Name
+                th= examiner.Title
+                th= examiner.Account.Name
+                    

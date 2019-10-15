@@ -1,0 +1,23 @@
+//- This page is a layout for each of the workshop pages
+//- When a workshop page is rendered, the database is queried for
+//- that specific workshop, and that data is rendered in this template
+extends ../layout
+    
+block content
+    div(style="text-align: center;")
+        ul(class='workshop-list')
+        each workshop in workshops
+            li(class='workshop-card')
+                h2= workshop.Workshop_Type__c
+                p #{workshop.Start_Date__c} - #{workshop.End_Date__c}
+                p(style="display: inline;") #{workshop.Event_City__c} , 
+                p(style="display: inline;") #{workshop.Event_Country__c}
+                h4(class="host-site-title") Host Site:
+                p #{workshop.Host_Site__c} 
+                h4 Affiliate: 
+                p #{workshop.Affiliate__c}
+                a(href='#{workshop.Registration_Website__c}')
+                    p Register
+
+
+

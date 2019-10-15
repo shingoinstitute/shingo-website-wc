@@ -1,0 +1,12 @@
+extends ../layout 
+
+block content
+    div(style="text-align: center;")
+        ul(class='affiliate-list')
+        each affiliate in affiliates
+            li(class='affiliate-card')
+                img(src="#{affiliate.Logo__c}")
+                h2= affiliate.Name
+                p LANGUAGES: #{affiliate.Languages__c}
+                a(href='/affiliates/#{affiliate.Id}')
+                    p Learn More

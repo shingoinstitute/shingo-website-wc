@@ -1,0 +1,45 @@
+extends ../layout
+    
+block content
+    div(class="workshop-filters")
+        div
+            h3 Workshop Type:
+            select(name="workshopType" onchange="filterWorkshops()")
+                option(value="All") All
+                option(value="Discover") Discover Excellence
+                option(value="Systems") Systems Design
+                option(value="Enable") Cultural Enablers
+                option(value="Improve") Continuous Improvement 
+                option(value="Align") Enterprise Alignment
+                option(value="Build") Build Excellence
+        div
+            h3 Country:
+            select(name="workshopCountry" onchange="filterWorkshops()")
+                option(value="All") All
+                option(value="Costa Rica") Costa Rica
+                option(value="France") France 
+                option(value="Improve") Germany
+                option(value="Ireland") Ireland
+                option(value="Mexico") Mexico
+                option(value="New Zealand") New Zealand
+                option(value="USA") USA
+                option(value="United Kingdom") United Kingdom
+                option(value="United Kingdom of Great Britain and Northern Ireland") United Kingdom of Great Britain and Northern Ireland
+                option(value="United States") United States
+        div
+            h3 Clear Filters
+            button(onclick='clearFilters()') Clear
+    ul(class='workshop-list')
+        each workshop in workshops
+            li(class='workshop-card')
+                h2= workshop.Workshop_Type__c
+                p #{workshop.Start_Date__c} - #{workshop.End_Date__c}
+                p(style="display: inline;") #{workshop.Event_City__c} , 
+                p(style="display: inline;") #{workshop.Event_Country__c}
+                h4(class="host-site-title") Host Site:
+                p #{workshop.Host_Site__c} 
+                h4 Affiliate: 
+                p #{workshop.Affiliate__c}
+                a(href='#{workshop.Registration_Website__c}' target="_blank")
+                    p Register
+

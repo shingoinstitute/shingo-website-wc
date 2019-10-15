@@ -1,0 +1,34 @@
+extends ../layout 
+
+block content
+    a(href="/affiliates")
+        img(src="https://img.icons8.com/color/65/000000/circled-left-2.png")
+    div(class="affiliate")
+        div(class="affiliate-summary")
+            h1= affiliate.Name
+            a(href="#{affiliate.Website}")
+                p #{affiliate.Website}
+            p !{affiliate.Summary__c} 
+        div(class="affiliate-info")
+            if affiliate.Languages__c
+                h2 Languages
+                h3= affiliate.Languages__c
+            if affiliate.Locations__c
+                h2 Locations
+                h3= affiliate.Locations__c
+            if affiliate.Industry_List__c
+                h2 Industries
+                h3= affiliate.Industry_List__c
+            img(src="#{affiliate.Logo__c}")
+    if affiliate.Contacts
+        div
+            h1(class="certified-facilitators") Certified Facilitators
+            ul(class='facilitator-list')
+            each facilitator in affiliate.Contacts.records
+                li(class='facilitator-card')
+                    img(src="#{facilitator.Photograph__c}")
+                    div(class="facilitator-info")
+                        h1= facilitator.Name
+                        p !{facilitator.Biography__c} 
+        
+            

@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  div(class="error-message")
+    img(src="https://img.icons8.com/color/125/000000/nothing-found.png")
+    h1 #{error.status} #{message}
+    h2 Oops! Looks like we can't find that page! Please check the URL or contact us at &nbsp
+    a(href="mailto:shingo.info@usu.edu") shingo.info@usu.edu
+  

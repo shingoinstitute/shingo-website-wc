@@ -1,0 +1,13 @@
+extends ../layout 
+
+block content
+    table(align="center")
+            tr(class="row-headers")
+                th Member
+                th Position
+                th Company
+            each member in members
+                tr
+                    th= member.Name
+                    th= member.Title
+                    th= member.Account.Name

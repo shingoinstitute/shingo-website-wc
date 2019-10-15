@@ -1,0 +1,46 @@
+extends ../layout 
+
+block content
+    div(style='text-align: center;')
+        h1 Conferences & Summits
+        each event in events
+            case event.Event_Type__c
+                when 'Conference'
+                    div(class='event-card')
+                        img(src="#{event.Banner_URL__c}")
+                        div
+                            h2= event.Name
+                            p Conferences and summits keep your continuous improvement efforts fresh and invigorated. Conferences are larger and apply to any industry. Summits are smaller and focus on specific industries.
+                            a(href="#{event.Registration_Link__c}" target="_blank")
+                                p Learn More
+                when 'Summit'
+                    div(class='event-card')
+                        img(src="#{event.Banner_URL__c}")
+                        div
+                            h2= event.Name
+                            p Conferences and summits keep your continuous improvement efforts fresh and invigorated. Conferences are larger and apply to any industry. Summits are smaller and focus on specific industries.
+                            a(href="#{event.Registration_Link__c}" target="_blank")
+                                p Learn More
+        h1 Study Tours
+        each event in events
+            case event.Event_Type__c
+                when 'Study Tour'
+                    div(class='event-card')
+                        img(src="#{event.Banner_URL__c}")
+                        div
+                            h2= event.Name
+                            p Study Tours provide a deeper understanding of Shingo tenets. See firsthand how Shingo Principles can apply to any organization as you tour top-flight facilities and some Shingo award recipients.
+                            a(href="#{event.Registration_Link__c}" target="_blank")
+                                p Learn More
+        h1 Showcases
+        each event in events
+            case event.Event_Type__c
+                when 'Showcase'
+                    div(class='event-card')
+                        img(src="#{event.Banner_URL__c}")
+                        div
+                            h2= event.Name
+                            p Shingo Showcases give you access to the inner workings of a mature facility that exemplifies excellence. They are one-day events that include an exclusive tour and a choice between two excellent workshops.
+                            a(href="#{event.Registration_Link__c}" target="_blank")
+                                p Learn More
+                
