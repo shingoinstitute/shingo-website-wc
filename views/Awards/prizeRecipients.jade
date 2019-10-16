@@ -16,9 +16,9 @@ block content
                         tr
                             th= award.Date_Awarded__c
                             th
-                                a(href="#{award.Company_Profile_Link__c}") #{award.Name}
+                                a(href="#{award.Company_Profile_Link__c}" target="_blank") #{award.Name}
                             th(style='text-align:center;')  
-                                a(href="#{award.Press_Release_Link__c}")
+                                a(href="#{award.Press_Release_Link__c}" target="_blank")
                                     img(src="https://img.icons8.com/ios/25/000000/download.png") 
                             th #{award.City__c}, #{award.State__c}, #{award.Country__c}
     button(class="accordion") Silver Medallion
@@ -36,9 +36,9 @@ block content
                         tr
                             th= award.Date_Awarded__c
                             th
-                                a(href="#{award.Company_Profile_Link__c}") #{award.Name}
+                                a(href="#{award.Company_Profile_Link__c}" target="_blank") #{award.Name}
                             th(style='text-align:center;')  
-                                a(href="#{award.Press_Release_Link__c}") 
+                                a(href="#{award.Press_Release_Link__c}" target="_blank") 
                                     img(src="https://img.icons8.com/ios/25/000000/download.png") 
                             th #{award.City__c}, #{award.State__c}, #{award.Country__c}
     button(class="accordion") Bronze Medallion
@@ -56,9 +56,9 @@ block content
                         tr
                             th= award.Date_Awarded__c
                             th
-                                a(href="#{award.Company_Profile_Link__c}") #{award.Name}
+                                a(href="#{award.Company_Profile_Link__c}" target="_blank") #{award.Name}
                             th(style='text-align:center;') 
-                                a(href="#{award.Press_Release_Link__c}") 
+                                a(href="#{award.Press_Release_Link__c}" target="_blank") 
                                     img(src="https://img.icons8.com/ios/25/000000/download.png") 
                             th #{award.City__c}, #{award.State__c}, #{award.Country__c}
 
