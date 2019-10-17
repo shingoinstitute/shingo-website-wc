@@ -296,6 +296,7 @@ div.event-card {
 div.event-card img {
   display: inline-block;
   width: 40%;
+  min-width: 450px;
 }
 
 div.event-card div {
@@ -323,6 +324,13 @@ div.event-card div a p {
   padding-top: 10px;
   border-radius: 5px;
   margin-top: 20px;
+}
+
+@media only screen and (max-width: 990px) {
+  div.event-card div {
+    width: 100%;
+    padding-left: 0px;
+  }
 }
 
 /* -------------------------------------------------------------------------------------------------------------------------------------------------------- */
