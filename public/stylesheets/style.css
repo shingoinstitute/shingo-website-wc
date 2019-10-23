@@ -444,6 +444,12 @@ div.workshop-buttons img:hover {
   width: 140px;
 }
 
+@media only screen and (max-width: 990px) {
+  div.workshop-buttons img {
+    width: 100px;
+  }
+}
+
 /* -------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 /* ERROR PAGE */
