@@ -426,6 +426,23 @@ div.publication-award a p {
   padding-top: 15px;
   border-radius: 5px;
 }
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* PARTIALS */
+
+div.workshop-buttons {
+  text-align: center;
+}
+
+div.workshop-buttons img {
+  width: 150px;
+  margin: 0px 15px;
+}
+
+div.workshop-buttons img:hover {
+  border: 5px solid #3793e3;
+  border-radius: 100px;
+  width: 140px;
+}
 
 /* -------------------------------------------------------------------------------------------------------------------------------------------------------- */
 

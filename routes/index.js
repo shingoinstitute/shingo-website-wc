@@ -231,5 +231,14 @@ router.get('/about/research-examiners', function(request, response, next) {
   });
 });
 
+//---------------------------------------------------------------------------------------------------------------------------------------------
+// PARTIALS
+
+router.get('/workshop-buttons', function(request, response, next) {
+  response.render('Partials/workshopButtons', 
+    { title: 'Workshop Buttons'
+  });  
+});
+
 
 module.exports = router;
