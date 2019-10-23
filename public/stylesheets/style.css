@@ -444,8 +444,14 @@ div.workshop-buttons img:hover {
   width: 140px;
 }
 
-@media only screen and (max-width: 990px) {
+@media only screen and (max-width: 650px) {
   div.workshop-buttons img {
+    width: 110px;
+  }
+
+  div.workshop-buttons img:hover {
+    border: 5px solid #3793e3;
+    border-radius: 100px;
     width: 100px;
   }
 }
