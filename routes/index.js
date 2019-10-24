@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var chalk = require('chalk');
+var fecha = require('fecha');
 
 // CONNECT salesforce & Set up PORT
 var jsforce = require('jsforce');
@@ -27,6 +28,14 @@ router.get('/workshops', function(request, response, next) {
   const query = 'SELECT Id,Name,Workshop_Type__c,Start_Date__c, End_Date__c,Event_City__c,Event_Country__c, Host_Site__c,Affiliate__c,Registration_Website__c FROM Workshop__c WHERE Public__c=true AND Status__c=\'Verified\' ORDER BY Start_Date__c'
   conn.query(query, function(err, res) {
     if (err) { return console.error(err); }
+
+    for(let i = 0; i < res.records.length; i++) {
+      var dateStringStart = res.records[i].Start_Date__c;
+      res.records[i].Start_Date__c = fecha.format(new Date(dateStringStart), 'D '); 
+
+      var dateStringEnd = res.records[i].End_Date__c;
+      res.records[i].End_Date__c = fecha.format(new Date(dateStringEnd), 'D MMM YYYY');      
+    }
 
     // RENDER VIEW
     response.render('Workshops/workshops', 
@@ -55,7 +64,7 @@ router.get('/workshops/:workshopType', function(request, response, next) {
 router.get('/affiliates', function(request, response, next) {
 
   //Query SalesForce
-  const query = 'SELECT Id, Name, Logo__c, Page_Path__c, Website, Languages__c FROM Account WHERE RecordType.Name=\'Licensed Affiliate\' AND (NOT Name LIKE \'McKinsey%\') AND (NOT Name LIKE \'Caldwell%\') AND (NOT Name LIKE \'Shingo Institute%\')'
+  const query = 'SELECT Id, Name, Logo__c, Page_Path__c, Website, Languages__c FROM Account WHERE RecordType.Name=\'Licensed Affiliate\' AND (NOT Name LIKE \'McKinsey%\') AND (NOT Name LIKE \'Shingo Institute%\') AND (NOT Name LIKE \'MyEducator%\') ORDER BY Name ASC'
   conn.query(query, function(err, res) {
     if (err) { return console.error(err); }
 

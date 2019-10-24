@@ -35,20 +35,24 @@ ul.workshop-list {
 li.workshop-card {
   display: inline-block;
   background-color: #fff;
-  width: 150px;
-  height: 425px;
+  width: 200px;
+  height: 350px;
   vertical-align: top;
   margin: 12px;
-  padding: 20px 50px;
+  padding: 0px 12px;
   border-style: solid;
   border-width: .5px;
   border-color: #ccc;
   text-align: center;
 }
 
+li.workshop-card div {
+  height: 210px;
+}
+
 li.workshop-card p {
   color: #888;
-  
+  height: 20px;
 }
 
 li.workshop-card a {
@@ -63,18 +67,66 @@ li.workshop-card a p{
   height: 30px;
   margin: 0 auto;
   padding-top: 10px;
-  border-radius: 5px;
-  margin-top: 20px;
+  border-radius: 5px; 
 }
 
 li.workshop-card h4 {
   color: #333;
   font-size: 16px;
-  margin: 10px auto;
+  margin: 5px auto;
+  height: 10px;
 }
 
 li.workshop-card h4.host-site-title {
-  margin-top: 35px;
+  margin-top: 15px;
+}
+
+li.Discover {
+  background-image: url("/images/DiscoverButton.png");
+  background-size: 200px;
+  background-position-x: 125px;
+  background-position-y: 275px;
+  background-repeat: no-repeat;
+}
+
+li.Systems {
+  background-image: url("/images/SystemsButton.png");
+  background-size: 200px;
+  background-position-x: 125px;
+  background-position-y: 275px;
+  background-repeat: no-repeat;
+}
+
+li.Enable {
+  background-image: url("/images/EnableButton.png");
+  background-size: 200px;
+  background-position-x: 125px;
+  background-position-y: 275px;
+  background-repeat: no-repeat;
+}
+
+li.Improve {
+  background-image: url("/images/ImproveButton.png");
+  background-size: 200px;
+  background-position-x: 125px;
+  background-position-y: 275px;
+  background-repeat: no-repeat;
+}
+
+li.Align {
+  background-image: url("/images/AlignButton.png");
+  background-size: 200px;
+  background-position-x: 125px;
+  background-position-y: 275px;
+  background-repeat: no-repeat;
+}
+
+li.Build {
+  background-image: url("/images/BuildButton.png");
+  background-size: 200px;
+  background-position-x: 125px;
+  background-position-y: 275px;
+  background-repeat: no-repeat;
 }
 
 /* WORKSHOP FILTERS */
