@@ -7,7 +7,7 @@ block content
     div(style="text-align: center;")
         ul(class='workshop-list')
         each workshop in workshops
-            li(class='workshop-card')
+            li(class='workshop-card #{workshop.Workshop_Type__c}')
                 h2= workshop.Workshop_Type__c
                 p #{workshop.Start_Date__c} - #{workshop.End_Date__c}
                 p(style="display: inline;") #{workshop.Event_City__c} , 
