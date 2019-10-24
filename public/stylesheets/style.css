@@ -207,7 +207,7 @@ li.affiliate-card {
   display: inline-block;
   background-color: #fff;
   width: 200px;
-  height: 400px;
+  height: 300px;
   vertical-align: top;
   margin: 12px;
   padding: 20px 50px;
@@ -217,8 +217,14 @@ li.affiliate-card {
   text-align: center;
 }
 
+li.affiliate-card div {
+  height: 235px;
+  text-align: left;
+}
+
 li.affiliate-card img {
-  width: 200px;
+  max-width: 100%;
+  max-height: 120px;
 }
 
 li.affiliate-card a {

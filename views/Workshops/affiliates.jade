@@ -5,8 +5,11 @@ block content
         ul(class='affiliate-list')
         each affiliate in affiliates
             li(class='affiliate-card')
-                img(src="#{affiliate.Logo__c}")
-                h2= affiliate.Name
-                p LANGUAGES: #{affiliate.Languages__c}
+                div
+                    img(src="#{affiliate.Logo__c}")
+                    p 
+                        h3 #{affiliate.Name}
+                        b LANGUAGES: 
+                        p #{affiliate.Languages__c}
                 a(href='/affiliates/#{affiliate.Id}')
                     p Learn More
