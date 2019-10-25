@@ -1,3 +1,4 @@
+// NPM Module Imports
 var express = require('express');
 var router = express.Router();
 var chalk = require('chalk');
@@ -29,6 +30,7 @@ router.get('/workshops', function(request, response, next) {
   conn.query(query, function(err, res) {
     if (err) { return console.error(err); }
 
+    //Format Dates
     for(let i = 0; i < res.records.length; i++) {
       var dateStringStart = res.records[i].Start_Date__c;
       res.records[i].Start_Date__c = fecha.format(new Date(dateStringStart), 'D '); 
