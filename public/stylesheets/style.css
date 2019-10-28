@@ -317,6 +317,7 @@ li.facilitator-card {
   border-width: .5px;
   border-color: #ccc;
   text-align: center;
+  margin-left: 4%;
 }
 
 li.facilitator-card div {
