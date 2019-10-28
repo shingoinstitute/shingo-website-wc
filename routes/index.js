@@ -22,7 +22,7 @@ conn.login(process.env.SF_USERNAME, process.env.SF_PASSWORD + process.env.SF_SEC
 //---------------------------------------------------------------------------------------------------------------------------------------------
 
 //WORKSHOP PAGES
-/* GET Workshop Schedule Page. */
+/* GET Workshop Schedule Page */
 router.get('/workshops', function(request, response, next) {
 
   //Query SalesForce
