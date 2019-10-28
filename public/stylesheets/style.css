@@ -354,7 +354,12 @@ div.event-card {
 div.event-card img {
   display: inline-block;
   width: 40%;
-  min-width: 450px;
+  max-height: 350px;
+}
+
+div.event-card h3 {
+  font-size: 18px;
+  font-weight: 200;
 }
 
 div.event-card div {

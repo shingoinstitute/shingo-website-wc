@@ -36,7 +36,7 @@ router.get('/workshops', function(request, response, next) {
       res.records[i].Start_Date__c = fecha.format(new Date(dateStringStart), 'D '); 
 
       var dateStringEnd = res.records[i].End_Date__c;
-      res.records[i].End_Date__c = fecha.format(new Date(dateStringEnd), 'D MMM YYYY');      
+      res.records[i].End_Date__c = fecha.format(new Date(dateStringEnd), 'D MMM, YYYY');      
     }
 
     // RENDER VIEW
@@ -105,6 +105,15 @@ router.get('/events', function(request, response, next) {
   const query = 'SELECT Id, Name, Event_Type__c,Start_Date__c,End_Date__c,Registration_Link__c, Display_Location__c, Banner_URL__c  FROM Shingo_Event__c WHERE Start_Date__c > TODAY and Publish_to_Web_App__c = true and Content_on_CVENT__c = true'
   conn.query(query, function(err, res) {
     if (err) { return console.error(err); }
+
+    //Format Dates
+    for(let i = 0; i < res.records.length; i++) {
+      var dateStringStart = res.records[i].Start_Date__c;
+      res.records[i].Start_Date__c = fecha.format(new Date(dateStringStart), 'D '); 
+
+      var dateStringEnd = res.records[i].End_Date__c;
+      res.records[i].End_Date__c = fecha.format(new Date(dateStringEnd), 'D MMM, YYYY');      
+    }
 
     // RENDER VIEW
     response.render('Events/events', 
