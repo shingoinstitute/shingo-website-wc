@@ -23,10 +23,10 @@ const filterWorkshops = function() {
     const workshops = document.getElementsByClassName("workshop-card");
 
     for(let i = 0; i < workshops.length; i++) {
-        if(workshops[i].firstChild.innerHTML == selectedType && workshops[i].children[3].innerHTML == selectedCountry) {
+        if(workshops[i].firstChild.innerHTML == selectedType && workshops[i].children[1].children[2].innerHTML == selectedCountry) {
             workshops[i].style.display = 'inline-block';
         } 
-        else if (selectedType == 'All' && workshops[i].children[3].innerHTML == selectedCountry) {
+        else if (selectedType == 'All' && workshops[i].children[1].children[2].innerHTML == selectedCountry) {
             workshops[i].style.display = 'inline-block';
         }
         else if (selectedCountry == 'All' && workshops[i].firstChild.innerHTML == selectedType) {

@@ -81,7 +81,7 @@ li.workshop-card h4.host-site-title {
   margin-top: 15px;
 }
 
-li.Discover {
+li[name="Discover"] {
   background-image: url("/images/DiscoverButton.png");
   background-size: 200px;
   background-position-x: 125px;
@@ -89,7 +89,7 @@ li.Discover {
   background-repeat: no-repeat;
 }
 
-li.Systems {
+li[name="Systems"] {
   background-image: url("/images/SystemsButton.png");
   background-size: 200px;
   background-position-x: 125px;
@@ -97,7 +97,7 @@ li.Systems {
   background-repeat: no-repeat;
 }
 
-li.Enable {
+li[name="Enable"] {
   background-image: url("/images/EnableButton.png");
   background-size: 200px;
   background-position-x: 125px;
@@ -105,7 +105,7 @@ li.Enable {
   background-repeat: no-repeat;
 }
 
-li.Improve {
+li[name="Improve"] {
   background-image: url("/images/ImproveButton.png");
   background-size: 200px;
   background-position-x: 125px;
@@ -113,7 +113,7 @@ li.Improve {
   background-repeat: no-repeat;
 }
 
-li.Align {
+li[name="Align"] {
   background-image: url("/images/AlignButton.png");
   background-size: 200px;
   background-position-x: 125px;
@@ -121,7 +121,7 @@ li.Align {
   background-repeat: no-repeat;
 }
 
-li.Build {
+li[name="Build"] {
   background-image: url("/images/BuildButton.png");
   background-size: 200px;
   background-position-x: 125px;
