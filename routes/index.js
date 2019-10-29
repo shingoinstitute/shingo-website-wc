@@ -82,7 +82,7 @@ router.get('/affiliates', function(request, response, next) {
 router.get('/affiliates/:id', function(request, response, next) {
 
   //Query SalesForce
-  const query = 'SELECT Account.Name, Account.Id, Account.Logo__c, Account.Page_Path__c, Account.Website, Account.Languages__c, Account.Summary__c, (SELECT Contact.Name,Contact.Facilitator_For__c,Contact.Photograph__c,Contact.Biography__c FROM Contacts WHERE Contact.Facilitator_For__c != null) FROM Account WHERE RecordType.Name=\'Licensed Affiliate\' AND Account.Id =' + '\'' + request.params.id + '\''
+  const query = 'SELECT Account.Name, Account.Id, Account.Logo__c, Account.Page_Path__c, Account.Website, Account.Languages__c, Account.Summary__c, Account.Public_Contact__c, Account.Public_Contact_Email__c, Account.Public_Contact_Phone__c, (SELECT Contact.Name,Contact.Facilitator_For__c,Contact.Photograph__c,Contact.Biography__c FROM Contacts WHERE Contact.Facilitator_For__c != null) FROM Account WHERE RecordType.Name=\'Licensed Affiliate\' AND Account.Id =' + '\'' + request.params.id + '\''
   conn.query(query, function(err, res) {
     if (err) { return console.error(err); }
       

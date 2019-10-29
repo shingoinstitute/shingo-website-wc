@@ -18,6 +18,9 @@ block content
                 h2 Industries
                 h3= affiliate.Industry_List__c
             img(src="#{affiliate.Logo__c}")
+        div(class="affiliate-contact-info")
+            p Contact: #{affiliate.Public_Contact__c} &nbsp | &nbsp #{affiliate.Public_Contact_Phone__c} &nbsp | &nbsp
+                a(href="malito:#{affiliate.Public_Contact_Email__c}" target="_top") #{affiliate.Public_Contact_Email__c}
     if affiliate.Contacts
         div
             h1(class="certified-facilitators") Certified Facilitators

@@ -252,10 +252,12 @@ div.affiliate-summary {
 
 div.affiliate-summary p {
   color: #888;
+  text-align: left;
 }
 
 div.affiliate-summary a p {
   color: #3793e3;
+  text-align: center;
 }
 
 div.affiliate-info {
@@ -341,6 +343,7 @@ div.facilitator-info {
 div.facilitator-info p {
   color: #888;
   font-size: 16px;
+  text-align: left;
 }
 /* -------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
