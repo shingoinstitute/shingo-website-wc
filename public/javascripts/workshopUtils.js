@@ -1,18 +1,5 @@
 // This file contains any javascript util functions needed for any workshop related pages
 
-const showDropdownItems = function(filterOption) {
-
-    const dropDownItems = document.getElementsByClassName(filterOption);
-
-    for(let i = 0; i < dropDownItems.length; i++) {
-        if(dropDownItems[i].style.display == 'block') {
-            dropDownItems[i].style.display = 'none'; 
-        } else {
-            dropDownItems[i].style.display = 'block'; 
-        }
-    }
-}
-
 const filterWorkshops = function() {
     var typeSelector = document.getElementsByName("workshopType")[0];
     var selectedType = typeSelector.options[typeSelector.selectedIndex].value;

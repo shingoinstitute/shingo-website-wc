@@ -1,0 +1,24 @@
+extends layout  
+
+block content
+    div(style="text-align: center;")
+        h1 Shingo Website Web Components
+        div
+            each route in routes
+                if !route.keys[0]
+                    a(href="#{route.route.path}")
+                        p= route.route.path
+            h1 Workshop Routes
+            a(href="/workshops/discover")
+                p Discover Excellence
+            a(href="/workshops/systems") 
+                p Systems Design
+            a(href="/workshops/enable") 
+                p Cultural Enablers
+            a(href="/workshops/improve") 
+                p Continuous Improvement
+            a(href="/workshops/align") 
+                p Enterprise Alignment
+            a(href="/workshops/build") 
+                p Build Excellence
+        

@@ -130,7 +130,7 @@ li[name="Build"] {
 }
 
 /* WORKSHOP FILTERS */
-.workshop-filters {
+.filters {
   text-align: center;
   display: flex;
   flex-direction: row;
@@ -139,7 +139,7 @@ li[name="Build"] {
   justify-content: center;
 }
 
-.workshop-filters div {
+.filters div {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -521,6 +521,18 @@ div.workshop-buttons img:hover {
     border-radius: 100px;
     width: 100px;
   }
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* PRESENTATIONS PAGE */
+
+div.presentations {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+div.presentaions a:hover {
+  color: red;
 }
 
 /* -------------------------------------------------------------------------------------------------------------------------------------------------------- */

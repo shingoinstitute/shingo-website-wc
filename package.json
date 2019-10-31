@@ -16,8 +16,11 @@
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "jsforce": "^1.9.2",
+    "lodash": "^4.17.15",
     "morgan": "~1.9.1",
-    "nodemon": "^1.19.3"
+    "nodemon": "^1.19.3",
+    "request-promise-native": "^1.0.7",
+    "xml2js": "^0.4.22"
   },
   "devDependencies": {
     "env-cmd": "^8.0.2"

@@ -3,6 +3,9 @@ var express = require('express');
 var router = express.Router();
 var chalk = require('chalk');
 var fecha = require('fecha');
+const _ = require('lodash')
+const xmlParser = require('xml2js').parseString
+const request = require('request-promise-native')
 
 // CONNECT salesforce & Set up PORT
 var jsforce = require('jsforce');
@@ -20,7 +23,20 @@ conn.login(process.env.SF_USERNAME, process.env.SF_PASSWORD + process.env.SF_SEC
 })
 
 //---------------------------------------------------------------------------------------------------------------------------------------------
+// HOME PAGE
+router.get('/', function(request, response, next) {
 
+    const routes = router.stack;
+    for(route in routes) {
+      console.log(routes[route].keys)
+    }
+
+    // RENDER VIEW
+    response.render('index', 
+    { title: 'Shingo Website WC - Home',
+      routes: routes});
+});
+//---------------------------------------------------------------------------------------------------------------------------------------------
 //WORKSHOP PAGES
 /* GET Workshop Schedule Page */
 router.get('/workshops', function(request, response, next) {
@@ -260,5 +276,67 @@ router.get('/workshop-buttons', function(request, response, next) {
   });  
 });
 
+//---------------------------------------------------------------------------------------------------------------------------------------------
+//Presentations
+
+// Get S3 bucket folder info
+function getAWSData(params){
+  // Destructure params
+  let {conf, year} = params;
+
+  // Create RegExs
+  const { p1: confPattern, p2: yearPattern } = { p1: /(international|latinamerica|manufacturing|european)/, p2: /2\d{3}/ };
+
+  // Test conf & year; set to default if fail
+  if(!conf) conf = 'international';
+  if(!yearPattern.test(year)) year = new Date().getFullYear();
+
+  const data =  { title: '', conf, year}
+  
+  // Return resulting title
+  if(conf === 'international') data.title = `${year} International Conference Presentations`;
+  else if(conf === 'latinamerica') data.title = `${year} Latin America Conference Presentations`;
+  else if(conf === 'european') data.title = `${year} European Conference Presentations`;
+  else if(conf === 'manufacturing') data.title = `${year} Manufacturing Summit Presentations`;
+  else if(conf === 'oe') data.title = `${year} Operational Excellence Conference Presentations`;
+  else if(conf === 'financialservices') data.title = `${year} Financial Services Conference Presentations`;
+  else {
+      const error = new Error(`Couldn't find presentations for ${JSON.stringify(params)}`);
+      error.status = 504;
+      throw error;
+  }
+  
+  return data;
+}
+
+router.get('/presentations/:conf?/:year?', function(req, res, next) {
+  const { title } = getAWSData(req.params);
+
+  const files = []
+  request("https://s3-us-west-1.amazonaws.com/shingo-presentations").then(body => {
+      xmlParser(body, function(err, bucket){
+          if(err) { console.error(`Error in GET: ${req.path}\n`, err); return next(); }
+          _.forOwn(bucket.ListBucketResult.Contents, function(val){
+              var pres = _.pick(val, 'Key');
+              if(pres && pres.Key && pres.Key.length) pres = pres.Key[0];
+              // logger.debug("Presentation Path: %s", pres);
+              if(pres.includes(title) && pres.includes(".pdf")){
+                  var file = "https://s3-us-west-1.amazonaws.com/shingo-presentations/" + pres.replace(new RegExp(" ", 'g'), "+");
+                  files.push({ file: file, name: pres.split('/')[1] });
+              }
+          });
+
+          res.render('About/presentations', {
+              title: "Download",
+              files: files,
+              conference: title
+          });
+      });
+  })
+  .catch(error => {
+      console.error(`Error in GET: ${req.path}\n`, error)
+      return next(error)
+  })
+})
 
 module.exports = router;
