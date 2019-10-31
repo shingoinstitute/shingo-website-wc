@@ -26,11 +26,6 @@ conn.login(process.env.SF_USERNAME, process.env.SF_PASSWORD + process.env.SF_SEC
 // HOME PAGE
 router.get('/', function(request, response, next) {
 
-    const routes = router.stack;
-    for(route in routes) {
-      console.log(routes[route].keys)
-    }
-
     // RENDER VIEW
     response.render('index', 
     { title: 'Shingo Website WC - Home',
