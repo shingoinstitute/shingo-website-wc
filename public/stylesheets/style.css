@@ -317,6 +317,14 @@ div.affiliate-info h3{
   li.affiliate-card {
     width: 60vw;
   }
+
+  h1.certified-facilitators {
+    width: 80vw;
+  }
+
+  li.facilitator-card {
+    width: 80vw;
+  }
 }
 
 h1.certified-facilitators {
@@ -324,9 +332,7 @@ h1.certified-facilitators {
   background-color: #3793e3;
   color: white;
   padding: 25px 12px;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   margin-top: 75px;
 }
 
@@ -361,10 +367,6 @@ li.facilitator-card img {
   margin: 0px 20px;
   vertical-align: top;
   margin-top: 3%;
-}
-
-div.facilitator-info {
-  padding-left: 50px;
 }
 
 div.facilitator-info p {
