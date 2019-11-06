@@ -6,6 +6,7 @@ var fecha = require('fecha');
 const _ = require('lodash')
 const xmlParser = require('xml2js').parseString
 const request = require('request-promise-native')
+const workshops = require('../public/javascripts/workshopUtils')
 
 // CONNECT salesforce & Set up PORT
 var jsforce = require('jsforce');
@@ -43,14 +44,24 @@ router.get('/workshops', function(request, response, next) {
   conn.query(query, function(err, res) {
     if (err) { return console.error(err); }
 
-    //Format Dates
+    //Format Dates and Workshop Names
     for(let i = 0; i < res.records.length; i++) {
       var dateStringStart = res.records[i].Start_Date__c;
       res.records[i].Start_Date__c = fecha.format(new Date(dateStringStart), 'D '); 
 
       var dateStringEnd = res.records[i].End_Date__c;
-      res.records[i].End_Date__c = fecha.format(new Date(dateStringEnd), 'D MMM, YYYY');      
-    }
+      res.records[i].End_Date__c = fecha.format(new Date(dateStringEnd), 'D MMM, YYYY');
+
+      if(res.records[i].End_Date__c.substring(2,5) == 'Jun' || res.records[i].End_Date__c.substring(3,6) == 'Sep') {
+        var newDateName = res.records[i].End_Date__c.replace('Jun','June');
+        res.records[i].End_Date__c = newDateName;
+
+        var newDateName = res.records[i].End_Date__c.replace('Sep','Sept');
+        res.records[i].End_Date__c = newDateName;
+      }
+
+      res.records[i].Workshop_Type__c = workshops.formatWorkshopName(res.records[i].Workshop_Type__c);
+    } 
 
     // RENDER VIEW
     response.render('Workshops/workshops', 
@@ -67,6 +78,25 @@ router.get('/workshops/:workshopType', function(request, response, next) {
   const query = 'SELECT Id,Name,Workshop_Type__c,Start_Date__c, End_Date__c,Event_City__c,Event_Country__c, Host_Site__c,Affiliate__c,Registration_Website__c FROM Workshop__c WHERE (Public__c=true AND Status__c=\'Verified\') and Workshop_Type__c = ' + '\'' + request.params.workshopType + '\'' + ' ORDER BY Start_Date__c'
   conn.query(query, function(err, res) {
     if (err) { return console.error(err); }
+
+    //Format Dates
+    for(let i = 0; i < res.records.length; i++) {
+      var dateStringStart = res.records[i].Start_Date__c;
+      res.records[i].Start_Date__c = fecha.format(new Date(dateStringStart), 'D '); 
+
+      var dateStringEnd = res.records[i].End_Date__c;
+      res.records[i].End_Date__c = fecha.format(new Date(dateStringEnd), 'D MMM, YYYY');
+
+      if(res.records[i].End_Date__c.substring(2,5) == 'Jun' || res.records[i].End_Date__c.substring(3,6) == 'Sep') {
+        var newDateName = res.records[i].End_Date__c.replace('Jun','June');
+        res.records[i].End_Date__c = newDateName;
+
+        var newDateName = res.records[i].End_Date__c.replace('Sep','Sept');
+        res.records[i].End_Date__c = newDateName;
+      }
+
+      res.records[i].Workshop_Type__c = workshops.formatWorkshopName(res.records[i].Workshop_Type__c);
+    }
 
     // RENDER VIEW
     response.render('Workshops/workshopTemplate', 
@@ -95,7 +125,7 @@ router.get('/affiliates', function(request, response, next) {
 router.get('/affiliates/:id', function(request, response, next) {
 
   //Query SalesForce
-  const query = 'SELECT Account.Name, Account.Id, Account.Logo__c, Account.Page_Path__c, Account.Website, Account.Languages__c, Account.Summary__c, Account.Public_Contact__c, Account.Public_Contact_Email__c, Account.Public_Contact_Phone__c, (SELECT Contact.Name,Contact.Facilitator_For__c,Contact.Photograph__c,Contact.Biography__c FROM Contacts WHERE Contact.Facilitator_For__c != null) FROM Account WHERE RecordType.Name=\'Licensed Affiliate\' AND Account.Id =' + '\'' + request.params.id + '\''
+  const query = 'SELECT Account.Name, Account.Id, Account.Logo__c, Account.Page_Path__c, Account.Website, Account.Languages__c, Account.Locations__c,Account.Industry_List__c, Account.Summary__c, Account.Public_Contact__c, Account.Public_Contact_Email__c, Account.Public_Contact_Phone__c, (SELECT Contact.Name,Contact.Facilitator_For__c,Contact.Photograph__c,Contact.Biography__c FROM Contacts WHERE Contact.Facilitator_For__c != null) FROM Account WHERE RecordType.Name=\'Licensed Affiliate\' AND Account.Id =' + '\'' + request.params.id + '\''
   conn.query(query, function(err, res) {
     if (err) { return console.error(err); }
       

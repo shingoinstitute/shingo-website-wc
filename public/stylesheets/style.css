@@ -50,6 +50,11 @@ li.workshop-card div {
   height: 210px;
 }
 
+li.workshop-card h2 {
+  font-size: 20px;
+  height: 45px;
+}
+
 li.workshop-card p {
   color: #888;
   height: 20px;
@@ -60,7 +65,7 @@ li.workshop-card a {
   margin-top: 12px;
 }
 
-li.workshop-card a p{
+li.workshop-card p.register-button-text{
   color: #fff;
   background-color: #f99800;
   width: 100px;
@@ -81,7 +86,7 @@ li.workshop-card h4.host-site-title {
   margin-top: 15px;
 }
 
-li[name="Discover"] {
+li[name="Discover Excellence"] {
   background-image: url("/images/DiscoverButton.png");
   background-size: 200px;
   background-position-x: 125px;
@@ -89,7 +94,7 @@ li[name="Discover"] {
   background-repeat: no-repeat;
 }
 
-li[name="Systems"] {
+li[name="Systems Design"] {
   background-image: url("/images/SystemsButton.png");
   background-size: 200px;
   background-position-x: 125px;
@@ -97,7 +102,7 @@ li[name="Systems"] {
   background-repeat: no-repeat;
 }
 
-li[name="Enable"] {
+li[name="Cultural Enablers"] {
   background-image: url("/images/EnableButton.png");
   background-size: 200px;
   background-position-x: 125px;
@@ -105,7 +110,7 @@ li[name="Enable"] {
   background-repeat: no-repeat;
 }
 
-li[name="Improve"] {
+li[name="Continuous Improvement"] {
   background-image: url("/images/ImproveButton.png");
   background-size: 200px;
   background-position-x: 125px;
@@ -113,7 +118,7 @@ li[name="Improve"] {
   background-repeat: no-repeat;
 }
 
-li[name="Align"] {
+li[name="Enterprise Alignment"] {
   background-image: url("/images/AlignButton.png");
   background-size: 200px;
   background-position-x: 125px;
@@ -121,7 +126,7 @@ li[name="Align"] {
   background-repeat: no-repeat;
 }
 
-li[name="Build"] {
+li[name="Build Excellence"] {
   background-image: url("/images/BuildButton.png");
   background-size: 200px;
   background-position-x: 125px;
@@ -227,6 +232,11 @@ li.affiliate-card img {
   max-height: 120px;
 }
 
+li.affiliate-card h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
 li.affiliate-card a {
   text-decoration: none;
   margin-top: 12px;
@@ -250,9 +260,14 @@ div.affiliate-summary {
   vertical-align: middle;
 }
 
+div.affiliate-summary img{ 
+  max-height: 200px;
+}
+
 div.affiliate-summary p {
-  color: #888;
+  color: #555;
   text-align: left;
+  font-size: 15px;
 }
 
 div.affiliate-summary a p {
@@ -266,13 +281,12 @@ div.affiliate-info {
   vertical-align: middle;
 }
 
-div.affiliate-info img{
-  width: 60%;
-}
-
 div.affiliate-info h3{
-  color: #888;
+  color: #555;
   font-size: 16px;
+  font-weight: 100;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 @media only screen and (max-width: 900px) {
@@ -320,6 +334,7 @@ li.facilitator-card {
   border-color: #ccc;
   text-align: center;
   margin-left: 4%;
+  background-color: white;
 }
 
 li.facilitator-card div {
@@ -341,7 +356,7 @@ div.facilitator-info {
 }
 
 div.facilitator-info p {
-  color: #888;
+  color:#555;
   font-size: 16px;
   text-align: left;
 }
@@ -473,6 +488,10 @@ td, th {
 
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+
+.prize-recipient-location p{
+  display: inline;
 }
 
 div.publication-award {

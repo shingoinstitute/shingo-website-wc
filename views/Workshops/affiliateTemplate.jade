@@ -3,7 +3,7 @@ extends ../layout
 block content
     div(class="affiliate")
         div(class="affiliate-summary")
-            h1= affiliate.Name
+            img(src="#{affiliate.Logo__c}")
             a(href="#{affiliate.Website}")
                 p #{affiliate.Website}
             p !{affiliate.Summary__c} 
@@ -17,7 +17,6 @@ block content
             if affiliate.Industry_List__c
                 h2 Industries
                 h3= affiliate.Industry_List__c
-            img(src="#{affiliate.Logo__c}")
         div(class="affiliate-contact-info")
             p Contact: #{affiliate.Public_Contact__c} &nbsp | &nbsp #{affiliate.Public_Contact_Phone__c} &nbsp | &nbsp
                 a(href="malito:#{affiliate.Public_Contact_Email__c}" target="_top") #{affiliate.Public_Contact_Email__c}

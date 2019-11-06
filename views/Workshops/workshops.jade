@@ -6,12 +6,12 @@ block content
             h3 Workshop Type:
             select(name="workshopType" onchange="filterWorkshops()")
                 option(value="All") All
-                option(value="Discover") Discover Excellence
-                option(value="Systems") Systems Design
-                option(value="Enable") Cultural Enablers
-                option(value="Improve") Continuous Improvement 
-                option(value="Align") Enterprise Alignment
-                option(value="Build") Build Excellence
+                option(value="Discover Excellence") Discover Excellence
+                option(value="Systems Design") Systems Design
+                option(value="Cultural Enablers") Cultural Enablers
+                option(value="Continuous Improvement ") Continuous Improvement 
+                option(value="Enterprise Alignment") Enterprise Alignment
+                option(value="Build Excellence") Build Excellence
         div
             h3 Country:
             select(name="workshopCountry" onchange="filterWorkshops()")
@@ -31,16 +31,16 @@ block content
             button(onclick='clearFilters()') Clear
     ul(class='workshop-list')
         each workshop in workshops
-            li(class='workshop-card' name="#{workshop.Workshop_Type__c}")
-                h2= workshop.Workshop_Type__c
-                div
-                    p #{workshop.Start_Date__c} - #{workshop.End_Date__c}
-                    p(style="display: inline;") #{workshop.Event_City__c}, 
-                    p(style="display: inline;") #{workshop.Event_Country__c}
-                    h4(class="host-site-title") Host Site:
-                    p #{workshop.Host_Site__c} 
-                    h4 Affiliate: 
-                    p #{workshop.Affiliate__c}
-                a(href='#{workshop.Registration_Website__c}' target="_blank")
-                    p Register
+            a(href='#{workshop.Registration_Website__c}' target="_blank")
+                li(class='workshop-card' name="#{workshop.Workshop_Type__c}")
+                    h2= workshop.Workshop_Type__c
+                    div
+                        p #{workshop.Start_Date__c} - #{workshop.End_Date__c}
+                        p(style="display: inline;") #{workshop.Event_City__c}, 
+                        p(style="display: inline;") #{workshop.Event_Country__c}
+                        h4(class="host-site-title") Host Site:
+                        p #{workshop.Host_Site__c} 
+                        h4 Affiliate: 
+                        p #{workshop.Affiliate__c}
+                    p(class="register-button-text") Register
 

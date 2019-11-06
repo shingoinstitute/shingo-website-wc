@@ -19,8 +19,14 @@ block content
                                 a(href="#{award.Company_Profile_Link__c}" target="_blank") #{award.Name}
                             th(style='text-align:center;')  
                                 a(href="#{award.Press_Release_Link__c}" target="_blank")
-                                    img(src="https://img.icons8.com/ios/25/000000/download.png") 
-                            th #{award.City__c}, #{award.State__c}, #{award.Country__c}
+                                    img(src="https://img.icons8.com/ios/25/000000/download.png")       
+                            th(class="prize-recipient-location")
+                                if award.City__c
+                                    p= award.City__c 
+                                if award.State__c
+                                    p , #{award.State__c}
+                                if award.Country__c
+                                    p , #{award.Country__c}                         
     button(class="accordion") Silver Medallion
     div(class="panel")
         h2 Silver Medallion Recipients
@@ -40,7 +46,13 @@ block content
                             th(style='text-align:center;')  
                                 a(href="#{award.Press_Release_Link__c}" target="_blank") 
                                     img(src="https://img.icons8.com/ios/25/000000/download.png") 
-                            th #{award.City__c}, #{award.State__c}, #{award.Country__c}
+                            th(class="prize-recipient-location")
+                                if award.City__c
+                                    p= award.City__c 
+                                if award.State__c
+                                    p , #{award.State__c}
+                                if award.Country__c
+                                    p , #{award.Country__c} 
     button(class="accordion") Bronze Medallion
     div(class="panel")
         h2 Bronze Medallion Recipients
@@ -60,7 +72,13 @@ block content
                             th(style='text-align:center;') 
                                 a(href="#{award.Press_Release_Link__c}" target="_blank") 
                                     img(src="https://img.icons8.com/ios/25/000000/download.png") 
-                            th #{award.City__c}, #{award.State__c}, #{award.Country__c}
+                            th(class="prize-recipient-location")
+                                if award.City__c
+                                    p= award.City__c 
+                                if award.State__c
+                                    p , #{award.State__c}
+                                if award.Country__c
+                                    p , #{award.Country__c} 
 
     //- Script for Collapsibles/Accordion    
     script. 

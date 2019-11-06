@@ -34,3 +34,29 @@ const clearFilters = function() {
     filterWorkshops();
 }
 
+exports.formatWorkshopName = function(workshop) {
+    switch(workshop) {
+        case 'Discover':
+            workshop = 'Discover Excellence';
+            break;
+        case 'Systems':
+            workshop = 'Systems Design';
+            break;
+        case 'Enable':
+            workshop = 'Cultural Enablers';
+            break;
+        case 'Improve':
+            workshop = 'Continuous Improvement';
+            break;
+        case 'Align':
+            workshop = 'Enterprise Alignment';
+            break;
+        case 'Build':
+            workshop = 'Build Excellence';
+            break;
+    }
+
+    return workshop;
+}
+
+
