@@ -261,7 +261,8 @@ div.affiliate-summary {
 }
 
 div.affiliate-summary img{ 
-  max-height: 200px;
+  width: 100%;
+  max-width: 25vw;
 }
 
 div.affiliate-summary p {
@@ -291,7 +292,7 @@ div.affiliate-info h3{
 
 @media only screen and (max-width: 900px) {
   div.affiliate-summary {
-    width: 100%;
+    width: 80vw;
   }
 
   div.affiliate-summary p{
@@ -299,10 +300,18 @@ div.affiliate-info h3{
   }
 
   div.affiliate-info {
-    width: 100%;
+    width: 80vw;
     text-align: center;
     margin-left: 0;
     
+  }
+
+  div.affiliate-summary img{ 
+    max-width: 80vw;
+  }
+
+  div.facilitator-info {
+    padding: 0px;
   }
 }
 
@@ -333,7 +342,7 @@ li.facilitator-card {
   border-width: .5px;
   border-color: #ccc;
   text-align: center;
-  margin-left: 4%;
+  margin-left: 0%;
   background-color: white;
 }
 
