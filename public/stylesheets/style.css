@@ -295,6 +295,10 @@ div.affiliate-info h3{
     width: 80vw;
   }
 
+  div.affiliate-summary img{ 
+    max-width: 60vw;
+  }
+
   div.affiliate-summary p{
     padding: 0 50px;
   }
@@ -302,16 +306,16 @@ div.affiliate-info h3{
   div.affiliate-info {
     width: 80vw;
     text-align: center;
-    margin-left: 0;
+    margin-left: none;
     
-  }
-
-  div.affiliate-summary img{ 
-    max-width: 80vw;
   }
 
   div.facilitator-info {
     padding: 0px;
+  }
+
+  li.affiliate-card {
+    width: 60vw;
   }
 }
 
@@ -319,8 +323,7 @@ h1.certified-facilitators {
   text-align: center;
   background-color: #3793e3;
   color: white;
-  height: 75px;
-  padding-top: 25px;
+  padding: 25px 12px;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
@@ -365,8 +368,8 @@ div.facilitator-info {
 }
 
 div.facilitator-info p {
-  color:#555;
-  font-size: 16px;
+  color:#333;
+  font-size: 18px;
   text-align: left;
 }
 /* -------------------------------------------------------------------------------------------------------------------------------------------------------- */
