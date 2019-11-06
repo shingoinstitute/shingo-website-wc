@@ -52,19 +52,7 @@ router.get('/workshops', function(request, response, next) {
       var dateStringEnd = res.records[i].End_Date__c;
       res.records[i].End_Date__c = fecha.format(new Date(dateStringEnd), 'D MMM, YYYY');
 
-      console.log(res.records[i].End_Date__c.substring(3,6))
-
-      if(res.records[i].End_Date__c.substring(2,5) == 'Jun' || res.records[i].End_Date__c.substring(3,6) == 'Sep' || res.records[i].End_Date__c.substring(3,6) == 'Jul') {
-        var newDateName = res.records[i].End_Date__c.replace('Jun','June');
-        res.records[i].End_Date__c = newDateName;
-
-        var newDateName = res.records[i].End_Date__c.replace('Sep','Sept');
-        res.records[i].End_Date__c = newDateName;
-
-        var newDateName = res.records[i].End_Date__c.replace('Jul','July');
-        res.records[i].End_Date__c = newDateName;
-      }
-
+      res.records[i].End_Date__c  = workshops.formatWorkshopDate(res.records[i].End_Date__c );
       res.records[i].Workshop_Type__c = workshops.formatWorkshopName(res.records[i].Workshop_Type__c);
     } 
 
@@ -92,17 +80,7 @@ router.get('/workshops/:workshopType', function(request, response, next) {
       var dateStringEnd = res.records[i].End_Date__c;
       res.records[i].End_Date__c = fecha.format(new Date(dateStringEnd), 'D MMM, YYYY');
 
-      if(res.records[i].End_Date__c.substring(2,5) == 'Jun' || res.records[i].End_Date__c.substring(3,6) == 'Sep' || res.records[i].End_Date__c.substring(3,6) == 'Jul') {
-        var newDateName = res.records[i].End_Date__c.replace('Jun','June');
-        res.records[i].End_Date__c = newDateName;
-
-        var newDateName = res.records[i].End_Date__c.replace('Sep','Sept');
-        res.records[i].End_Date__c = newDateName;
-
-        var newDateName = res.records[i].End_Date__c.replace('Jul','July');
-        res.records[i].End_Date__c = newDateName;
-      }
-
+      res.records[i].End_Date__c  = workshops.formatWorkshopDate(res.records[i].End_Date__c );
       res.records[i].Workshop_Type__c = workshops.formatWorkshopName(res.records[i].Workshop_Type__c);
     }
 

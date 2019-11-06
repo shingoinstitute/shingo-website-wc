@@ -59,4 +59,19 @@ exports.formatWorkshopName = function(workshop) {
     return workshop;
 }
 
+exports.formatWorkshopDate = function(workshopDate) {
+    if(workshopDate.substring(2,5) == 'Jun' || workshopDate.substring(3,6) == 'Sep' || workshopDate.substring(3,6) == 'Jul') {
+        var newDateName = workshopDate.replace('Jun','June');
+        workshopDate = newDateName;
+
+        var newDateName = workshopDate.replace('Sep','Sept');
+        workshopDate = newDateName;
+
+        var newDateName = workshopDate.replace('Jul','July');
+        workshopDate = newDateName;
+    }
+
+    return workshopDate;
+}
+
 
