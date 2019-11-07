@@ -1,0 +1,59 @@
+/* EVENT PAGES */
+div.event-card {
+    padding: 20px 25px;
+    border: solid .5px #bbb;
+    margin: 25px 0px;
+    background-color: #fff;
+}
+
+div.event-card img {
+    display: inline-block;
+    width: 40%;
+    max-height: 350px;
+    }
+
+div.event-card h3 {
+    font-size: 18px;
+    font-weight: 200;
+    }
+
+div.event-card div {
+    display: inline-block;
+    width: 40%;
+    padding-left: 10%;
+    vertical-align: top;
+    }
+
+div.event-card div p {
+    color: #999;
+    font-size: 18px;
+    }
+
+div.event-card div a {
+    text-decoration: none;
+    margin-top: 12px;
+    }
+
+div.event-card div a p {
+    color: #eee;
+    background-color: #f99800;
+    width: 150px;
+    height: 30px;
+    margin: 0 auto;
+    padding-top: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    }
+
+@media only screen and (max-width: 990px) {
+div.event-card div {
+    width: 100%;
+    padding-left: 0px;
+    }
+
+div.event-card img {
+    display: inline-block;
+    width: 100%;
+    min-width: 0px;
+    }
+}
