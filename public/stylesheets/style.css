@@ -566,12 +566,19 @@ div.workshop-buttons img:hover {
 /* PRESENTATIONS PAGE */
 
 div.presentations {
-  margin-left: 20%;
-  margin-right: 20%;
+  width: 75%;
+  margin: 0 auto;
 }
 
 div.presentaions a:hover {
   color: red;
+}
+
+@media only screen and (max-width: 700px) {
+  div.presentations {
+    width: 85vw;
+
+  }
 }
 
 /* -------------------------------------------------------------------------------------------------------------------------------------------------------- */
