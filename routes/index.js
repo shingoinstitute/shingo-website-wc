@@ -163,6 +163,12 @@ router.get('/awards/prize-recipients', function(request, response, next) {
   conn.query(query, function(err, res) {
     if (err) { return console.error(err); }
 
+    for(let i = 0; i < res.records.length; i++) {
+
+      var dateAwarded = res.records[i].Date_Awarded__c;
+      res.records[i].Date_Awarded__c = fecha.format(new Date(dateAwarded), 'YYYY');
+    }
+
     // RENDER VIEW
     response.render('Awards/prizeRecipients', 
     { title: 'Awards - Shingo Prize Recipients',
@@ -178,6 +184,12 @@ router.get('/awards/research', function(request, response, next) {
   conn.query(query, function(err, res) {
     if (err) { return console.error(err); }
 
+    for(let i = 0; i < res.records.length; i++) {
+
+      var dateAwarded = res.records[i].Press_Release_Date__c;
+      res.records[i].Press_Release_Date__c = fecha.format(new Date(dateAwarded), 'YYYY');
+    }
+
     // RENDER VIEW
     response.render('Awards/researchAwardRecipients', 
     { title: 'Awards - Research Award Recipients',
@@ -192,6 +204,12 @@ router.get('/awards/publication', function(request, response, next) {
   const query = 'Select Id, Name, Public_Author_Name__c, Press_Release_Date__c FROM Publication_Award__c WHERE Published__c=true ORDER BY Press_Release_Date__c DESC'
   conn.query(query, function(err, res) {
     if (err) { return console.error(err); }
+
+    for(let i = 0; i < res.records.length; i++) {
+
+      var dateAwarded = res.records[i].Press_Release_Date__c;
+      res.records[i].Press_Release_Date__c = fecha.format(new Date(dateAwarded), 'MMM YYYY');
+    }
 
     // RENDER VIEW
     response.render('Awards/publicationAwardRecipients', 
