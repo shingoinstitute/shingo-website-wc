@@ -20,8 +20,8 @@ conn.login(process.env.SF_USERNAME, process.env.SF_PASSWORD + process.env.SF_SEC
 // GET Home Page
 router.get('/', function(request, response, next) {
 
-    const routes = router.stack;
-
+    const routes = ['/','/about/academy','about/alumni','about/site-examiners','about/research-examiners','/affiliates','awards/prize-recipients','awards/research','awards/publication','/events','/presentations','/workshops'];
+    
     // RENDER VIEW
     response.render('index', 
     { title: 'Shingo Website WC - Home',

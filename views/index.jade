@@ -5,24 +5,7 @@ block content
         h1 Shingo Website Web Components
         div
             each route in routes
-                //- Checks to see if the route does not have perameters
-                if !route.keys[0]
-                    a(href="#{route.route.path}")
-                        p= route.route.path
-            a(href="/presentations")
-                p /presentations
-                
-            h1 Workshop Routes
-            a(href="/workshops/discover")
-                p Discover Excellence
-            a(href="/workshops/systems") 
-                p Systems Design
-            a(href="/workshops/enable") 
-                p Cultural Enablers
-            a(href="/workshops/improve") 
-                p Continuous Improvement
-            a(href="/workshops/align") 
-                p Enterprise Alignment
-            a(href="/workshops/build") 
-                p Build Excellence
+                a(href=route)
+                    p= route
+            
         
