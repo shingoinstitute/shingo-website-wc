@@ -21,8 +21,8 @@ conn.login(process.env.SF_USERNAME, process.env.SF_PASSWORD + process.env.SF_SEC
 //Heroku will put your app to sleep if it does not get traffic for a certain period of time
 // this is a simple script to ping the site once per min to keep it alive with artificial traffic.
 setInterval(function() {
-    http.get("http://localhost:3000");
-}, 60000); // every 5 minutes (300000)
+    http.get("http://apps.shingo.org/");
+}, 3000); // every 5 minutes (300000)
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------
