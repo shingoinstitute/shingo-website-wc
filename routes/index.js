@@ -22,7 +22,7 @@ conn.login(process.env.SF_USERNAME, process.env.SF_PASSWORD + process.env.SF_SEC
 // this is a simple script to ping the site once per min to keep it alive with artificial traffic.
 setInterval(function() {
     http.get("http://apps.shingo.org/");
-}, 3000); // every 5 minutes (300000)
+}, 60000); // every 5 minutes (300000)
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------
