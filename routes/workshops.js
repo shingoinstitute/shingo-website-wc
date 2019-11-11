@@ -21,7 +21,7 @@ router.get('/', function(request, response, next) {
       //Format Dates and Workshop Names
       for(let i = 0; i < res.records.length; i++) {
         var dateStringStart = res.records[i].Start_Date__c;
-        res.records[i].Start_Date__c = fecha.format(new Date(dateStringStart), 'D '); 
+        res.records[i].Start_Date__c = fecha.format(new Date(dateStringStart), 'D'); 
   
         var dateStringEnd = res.records[i].End_Date__c;
         res.records[i].End_Date__c = fecha.format(new Date(dateStringEnd), 'D MMM, YYYY');
@@ -49,7 +49,7 @@ router.get('/', function(request, response, next) {
       //Format Dates
       for(let i = 0; i < res.records.length; i++) {
         var dateStringStart = res.records[i].Start_Date__c;
-        res.records[i].Start_Date__c = fecha.format(new Date(dateStringStart), 'D '); 
+        res.records[i].Start_Date__c = fecha.format(new Date(dateStringStart), 'D'); 
   
         var dateStringEnd = res.records[i].End_Date__c;
         res.records[i].End_Date__c = fecha.format(new Date(dateStringEnd), 'D MMM, YYYY');

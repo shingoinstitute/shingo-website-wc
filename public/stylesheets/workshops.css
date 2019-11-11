@@ -214,12 +214,7 @@ font-size: 18px;
 font-weight: bold;
 }
 
-li.affiliate-card a {
-text-decoration: none;
-margin-top: 12px;
-}
-
-li.affiliate-card a p{
+p.affiliate-link{
 color: #fff;
 background-color: #f99800;
 width: 100px;
@@ -255,8 +250,9 @@ text-align: center;
 
 div.affiliate-info {
 display:inline-block;
-width: 40%;
+width: 30%;
 vertical-align: middle;
+margin-left: 80px;
 }
 
 div.affiliate-info h3{
@@ -267,41 +263,41 @@ max-width: 400px;
 margin: 0 auto;
 }
 
-@media only screen and (max-width: 900px) {
-div.affiliate-summary {
-    width: 80vw;
-}
+@media only screen and (max-width: 1000px) {
+    div.affiliate-summary {
+        width: 80vw;
+    }
 
-div.affiliate-summary img{ 
-    max-width: 60vw;
-}
+    div.affiliate-summary img{ 
+        max-width: 60vw;
+    }
 
-div.affiliate-summary p{
-    padding: 0 50px;
-}
+    div.affiliate-summary p{
+        padding: 0 50px;
+    }
 
-div.affiliate-info {
-    width: 80vw;
-    text-align: center;
-    margin-left: none;
-    
-}
+    div.affiliate-info {
+        width: 80vw;
+        text-align: center;
+        margin-left: 0;
+        
+    }
 
-div.facilitator-info {
-    padding: 0px;
-}
+    div.facilitator-info {
+        padding: 0px;
+    }
 
-li.affiliate-card {
-    width: 60vw;
-}
+    li.affiliate-card {
+        width: 60vw;
+    }
 
-h1.certified-facilitators {
-    width: 80vw;
-}
+    h1.certified-facilitators {
+        width: 80vw;
+    }
 
-li.facilitator-card {
-    width: 80vw;
-}
+    li.facilitator-card {
+        width: 80vw;
+    }
 }
 
 h1.certified-facilitators {
