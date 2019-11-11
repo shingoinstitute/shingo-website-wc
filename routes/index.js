@@ -1,12 +1,13 @@
 // NPM Module Imports
-var express = require('express');
-var router = express.Router();
-var chalk = require('chalk');
+const express = require('express');
+const router = express.Router();
+const chalk = require('chalk');
+const http = require("http");
 
 
-// CONNECT salesforce & Set up PORT
-var jsforce = require('jsforce');
-var conn = new jsforce.Connection();
+// CONNECT to salesforce & Set up PORT
+const jsforce = require('jsforce');
+const conn = new jsforce.Connection();
 
 // LOGIN TO SALESFORCE
 conn.login(process.env.SF_USERNAME, process.env.SF_PASSWORD + process.env.SF_SECURITY_TOKEN, function(err, res) {
@@ -16,6 +17,14 @@ conn.login(process.env.SF_USERNAME, process.env.SF_PASSWORD + process.env.SF_SEC
     console.log(chalk.green('Listening on Port: ') + process.env.PORT);
   }
 })
+
+//Heroku will put your app to sleep if it does not get traffic for a certain period of time
+// this is a simple script to ping the site once per min to keep it alive with artificial traffic
+setInterval(function() {
+    http.get("http://localhost:3000");
+}, 60000); // every 5 minutes (300000)
+
+
 //--------------------------------------------------------------------------------------------------------------------------------------
 // GET Home Page
 router.get('/', function(request, response, next) {
