@@ -6,26 +6,14 @@ block content
             h3 Workshop Type:
             select(name="workshopType" onchange="filterWorkshops()")
                 option(value="All") All
-                option(value="Discover Excellence") Discover Excellence
-                option(value="Systems Design") Systems Design
-                option(value="Cultural Enablers") Cultural Enablers
-                option(value="Continuous Improvement ") Continuous Improvement 
-                option(value="Enterprise Alignment") Enterprise Alignment
-                option(value="Build Excellence") Build Excellence
+                each workshopType in workshopTypes
+                    option(value="#{workshopType}")= workshopType
         div
             h3 Country:
             select(name="workshopCountry" onchange="filterWorkshops()")
                 option(value="All") All
-                option(value="Costa Rica") Costa Rica
-                option(value="France") France 
-                option(value="Improve") Germany
-                option(value="Ireland") Ireland
-                option(value="Mexico") Mexico
-                option(value="New Zealand") New Zealand
-                option(value="USA") USA
-                option(value="United Kingdom") United Kingdom
-                option(value="United Kingdom of Great Britain and Northern Ireland") United Kingdom of Great Britain and Northern Ireland
-                option(value="United States") United States
+                each workshopCountry in workshopCountries
+                    option(value="#{workshopCountry}")= workshopCountry
         div
             h3 Clear Filters
             button(onclick='clearFilters()') Clear

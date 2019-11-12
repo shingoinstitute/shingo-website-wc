@@ -17,6 +17,10 @@ router.get('/', function(request, response, next) {
     const query = 'SELECT Id,Name,Workshop_Type__c,Start_Date__c, End_Date__c,Event_City__c,Event_Country__c, Host_Site__c,Affiliate__c,Registration_Website__c FROM Workshop__c WHERE Public__c=true AND Status__c=\'Verified\' ORDER BY Start_Date__c'
     conn.query(query, function(err, res) {
       if (err) { return console.error(err); }
+
+      // Arrays will contain all current workshop types and countries
+      var workshopTypes = [];
+      var workshopCountries = [];
   
       //Format Dates and Workshop Names
       for(let i = 0; i < res.records.length; i++) {
@@ -28,12 +32,21 @@ router.get('/', function(request, response, next) {
   
         res.records[i].End_Date__c  = workshops.formatWorkshopDate(res.records[i].End_Date__c );
         res.records[i].Workshop_Type__c = workshops.formatWorkshopName(res.records[i].Workshop_Type__c);
+
+        if(!workshopTypes.includes(res.records[i].Workshop_Type__c)) {
+          workshopTypes.push(res.records[i].Workshop_Type__c) 
+        }
+
+        if(!workshopCountries.includes(res.records[i].Event_Country__c)) {
+          workshopCountries.push(res.records[i].Event_Country__c) 
+        }
       } 
-  
       // RENDER VIEW
       response.render('Workshops/workshops', 
       { title: 'Shingo Workshop Schedule',
-        workshops: res.records});
+        workshops: res.records,
+        workshopTypes: workshopTypes,
+        workshopCountries: workshopCountries});
     });
   });
   
