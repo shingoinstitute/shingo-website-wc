@@ -22,7 +22,7 @@ router.get('/', function(request, response, next) {
         res.records[i].Start_Date__c = fecha.format(new Date(dateStringStart), 'D '); 
   
         var dateStringEnd = res.records[i].End_Date__c;
-        res.records[i].End_Date__c = fecha.format(new Date(dateStringEnd), 'D MMM, YYYY');      
+        res.records[i].End_Date__c = fecha.format(new Date(dateStringEnd), 'D MMMM, YYYY');      
       }
   
       // RENDER VIEW
