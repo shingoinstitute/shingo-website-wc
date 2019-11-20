@@ -7,7 +7,7 @@ block content
             case event.Event_Type__c
                 when 'Conference'
                     div(class='event-card')
-                        img(src="#{event.Banner_URL__c}")
+                        div(class="event-image" style="background-image: url(#{event.Banner_URL__c})")
                         div
                             h2= event.Name
                             h3 #{event.Start_Date__c} - #{event.End_Date__c} | #{event.Display_Location__c}
@@ -16,7 +16,7 @@ block content
                                 p Learn More
                 when 'Summit'
                     div(class='event-card')
-                        img(src="#{event.Banner_URL__c}")
+                        div(class="event-image" style="background-image: url(#{event.Banner_URL__c})")
                         div
                             h2= event.Name
                             h3 #{event.Start_Date__c} - #{event.End_Date__c} | #{event.Display_Location__c}
@@ -28,7 +28,7 @@ block content
             case event.Event_Type__c
                 when 'Study Tour'
                     div(class='event-card')
-                        img(src="#{event.Banner_URL__c}")
+                        div(class="event-image" style="background-image: url(#{event.Banner_URL__c})")
                         div
                             h2= event.Name
                             h3 #{event.Start_Date__c} - #{event.End_Date__c} | #{event.Display_Location__c}
@@ -40,7 +40,7 @@ block content
             case event.Event_Type__c
                 when 'Showcase'
                     div(class='event-card')
-                        img(src="#{event.Banner_URL__c}")
+                        div(class="event-image" style="background-image: url(#{event.Banner_URL__c})")
                         div
                             h2= event.Name
                             h3 #{event.End_Date__c} | #{event.Display_Location__c}

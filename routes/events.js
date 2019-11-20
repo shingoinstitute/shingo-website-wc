@@ -32,4 +32,28 @@ router.get('/', function(request, response, next) {
     });
   });
 
+/* GET Shingo Events Page. */
+router.get('/showcases', function(request, response, next) {
+
+    //Query SalesForce
+    const query = 'SELECT Id, Name, Event_Type__c,Start_Date__c,End_Date__c,Registration_Link__c, Display_Location__c, Banner_URL__c,Company_Bio__c,Registration_Deadline__c  FROM Shingo_Event__c WHERE Event_Type__c = \'showcase\' and Start_Date__c > TODAY and Publish_to_Web_App__c = true and Content_on_CVENT__c = true ORDER BY Start_Date__c'
+    conn.query(query, function(err, res) {
+      if (err) { return console.error(err); }
+  
+      //Format Dates
+      for(let i = 0; i < res.records.length; i++) {
+        var dateStringStart = res.records[i].Start_Date__c;
+        res.records[i].Start_Date__c = fecha.format(new Date(dateStringStart), 'D '); 
+  
+        var dateStringEnd = res.records[i].End_Date__c;
+        res.records[i].End_Date__c = fecha.format(new Date(dateStringEnd), 'D MMMM, YYYY');      
+      }
+  
+      // RENDER VIEW
+      response.render('Events/showcases', 
+      { title: 'Shingo Events',
+        events: res.records});
+    });
+  });
+
 module.exports = router;

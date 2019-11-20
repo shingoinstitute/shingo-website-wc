@@ -6,27 +6,44 @@ div.event-card {
     background-color: #fff;
 }
 
-div.event-card img {
+div.event-image {
     display: inline-block;
-    width: 40%;
-    max-height: 350px;
+    height: 250px;
+    max-width: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    }
+
+p.registration-deadline {
+    background-color: #1e508b;
+    height: 40px;
+    margin-top: 210px;
+    padding-top: 10px;
+    padding-left: 12px;
+    }
+
+div.event-card h2 {
+    text-align: left;
     }
 
 div.event-card h3 {
     font-size: 18px;
     font-weight: 200;
+    text-align: left;
     }
 
 div.event-card div {
     display: inline-block;
     width: 40%;
-    padding-left: 10%;
+    margin-left: 5%;
     vertical-align: top;
     }
 
 div.event-card div p {
     color: #999;
-    font-size: 18px;
+    font-size: 17px;
+    text-align: left;
     }
 
 div.event-card div a {
@@ -43,6 +60,7 @@ div.event-card div a p {
     padding-top: 10px;
     border-radius: 5px;
     margin-top: 20px;
+    text-align: center;
     }
 
 @media only screen and (max-width: 990px) {
