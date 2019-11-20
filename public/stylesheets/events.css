@@ -66,12 +66,14 @@ div.event-card div a p {
 @media only screen and (max-width: 990px) {
 div.event-card div {
     width: 100%;
-    padding-left: 0px;
+    margin-left: 0;
+    }
+div.event-card {
+    margin: 0;
+    padding: 20px 10%;
     }
 
-div.event-card img {
-    display: inline-block;
-    width: 100%;
-    min-width: 0px;
+div.event-image {
+    float: left;
     }
 }
