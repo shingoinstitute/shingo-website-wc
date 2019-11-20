@@ -46,7 +46,12 @@ router.get('/showcases', function(request, response, next) {
         res.records[i].Start_Date__c = fecha.format(new Date(dateStringStart), 'D '); 
   
         var dateStringEnd = res.records[i].End_Date__c;
-        res.records[i].End_Date__c = fecha.format(new Date(dateStringEnd), 'D MMMM, YYYY');      
+        res.records[i].End_Date__c = fecha.format(new Date(dateStringEnd), 'D MMMM, YYYY');
+        
+        if(res.records[i].Registration_Deadline__c != null) {
+          var deadlineDate = res.records[i].Registration_Deadline__c;
+          res.records[i].Registration_Deadline__c= fecha.format(new Date(deadlineDate), 'D MMMM, YYYY'); 
+        }
       }
   
       // RENDER VIEW
