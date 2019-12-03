@@ -20,11 +20,11 @@ block content
         div(class="affiliate-contact-info")
             p Contact: #{affiliate.Public_Contact__c} &nbsp | &nbsp #{affiliate.Public_Contact_Phone__c} &nbsp | &nbsp
                 a(href="malito:#{affiliate.Public_Contact_Email__c}" target="_top") #{affiliate.Public_Contact_Email__c}
-    if affiliate.Contacts
+    if facilitators[0]
         div
             h1(class="certified-facilitators") Certified Facilitators
             ul(class='facilitator-list')
-            each facilitator in affiliate.Contacts.records
+            each facilitator in facilitators
                 li(class='facilitator-card')
                     img(src="#{facilitator.Photograph__c}")
                     div(class="facilitator-info")

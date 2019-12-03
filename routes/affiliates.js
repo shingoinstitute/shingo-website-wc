@@ -26,15 +26,24 @@ router.get('/', function(request, response, next) {
   /* GET Affiliate page for specific affiliate. */
 router.get('/:id', function(request, response, next) {
 
-    //Query SalesForce
-    const query = 'SELECT Account.Name, Account.Id, Account.Logo__c, Account.Page_Path__c, Account.Website, Account.Languages__c, Account.Locations__c,Account.Industry_List__c, Account.Summary__c, Account.Public_Contact__c, Account.Public_Contact_Email__c, Account.Public_Contact_Phone__c, (SELECT Contact.Name,Contact.Facilitator_For__c,Contact.Photograph__c,Contact.Biography__c FROM Contacts WHERE Contact.Facilitator_For__c != null) FROM Account WHERE RecordType.Name=\'Licensed Affiliate\' AND Account.Id =' + '\'' + request.params.id + '\''
+    //Query SalesForce (first for faciliators related to affiliate)
+    var query = "SELECT Id, Name, Title, Biography__c, Photograph__c, Account.Name FROM Contact WHERE Facilitator_For__r.Id='" + request.params.id + "' ORDER BY LastName";
     conn.query(query, function(err, res) {
+        // console.log(res)
         if (err) { return console.error(err); }
         
-        // RENDER VIEW
-        response.render('Workshops/affiliateTemplate', 
-        { title: 'Affiliates',
-        affiliate: res.records[0]
+        //Query Salesforce again for affiliate info
+        query = 'SELECT Name, Id, Logo__c, Page_Path__c, Website, Languages__c, Locations__c, Industry_List__c, Summary__c, Public_Contact__c, Public_Contact_Email__c, Public_Contact_Phone__c FROM Account WHERE RecordType.Name=\'Licensed Affiliate\' AND Account.Id =' + '\'' + request.params.id + '\''
+        conn.query(query, function(err,res1) {
+            if (err) { return console.error(err); }
+
+            console.log(res1.records[0])
+            // RENDER VIEW
+            response.render('Workshops/affiliateTemplate', 
+            { title: 'Affiliates',
+            affiliate: res1.records[0],
+            facilitators: res.records
+            });
         });
     });
 });
