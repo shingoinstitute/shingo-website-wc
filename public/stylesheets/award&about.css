@@ -88,3 +88,28 @@ div.publication-award a p {
     padding-top: 15px;
     border-radius: 5px;
   }
+
+/* PROFILE PICTURES */
+ul.profile-pic-list {
+  list-style: none;
+  padding: 0 0;
+  text-align: center;
+}
+
+ul.profile-pic-list li {
+  text-align: center;
+  display: inline-block;
+  margin: 30px;
+  vertical-align: top;
+}
+
+ul.profile-pic-list img {
+  border-radius: 55px;
+  height: 200px;
+  width: 200px;
+}
+
+ul.profile-pic-list h2 {
+  font-weight: 100;
+}
+
