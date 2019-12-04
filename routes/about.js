@@ -67,6 +67,7 @@ router.get('/research-examiners', function(request, response, next) {
   });
 });
 
+/* GET Shingo Staff Page. */
 router.get('/staff', function(request, response, next) {
 
   //Query SalesForce
@@ -76,8 +77,72 @@ router.get('/staff', function(request, response, next) {
 
     // RENDER VIEW
     response.render('About/staff', 
-    { title: 'Shingo Research & Publication Examiners',
+    { title: 'Shingo Staff',
       employees: res.records});
+  });
+});
+
+/* GET Shingo Executive Advisory Board Page. */
+router.get('/seab', function(request, response, next) {
+
+  //Query SalesForce
+  const query = "SELECT Id, Name, Title, Account.Name, Photograph__c FROM Contact WHERE Shingo_Prize_Relationship__c INCLUDES('Board of Governors') ORDER BY LastName";
+  conn.query(query, function(err, res) {
+    if (err) { return console.error(err); }
+
+    // RENDER VIEW
+    response.render('About/seab', 
+    { title: 'Shingo Executive Advisory Board',
+      members: res.records});
+  });
+});
+
+/* GET Shingo Profile Page for Shingo Executive Advisory Board Member. */
+router.get('/seab/:id', function(request, response, next) {
+
+  //Query SalesForce
+  const query = "SELECT Id, Name, Title, Account.Name, Photograph__c,Biography__c FROM Contact WHERE Id = '" + request.params.id + "' AND Shingo_Prize_Relationship__c INCLUDES('Board of Governors') ORDER BY LastName";
+  conn.query(query, function(err, res) {
+    if (err) { return console.error(err); }
+
+    console.log(res.records[0].Name)
+
+    // RENDER VIEW
+    response.render('About/seabTemplate', 
+    { title: res.records[0].Name + ' - ' + res.records[0].Title,
+      member: res.records[0]});
+  });
+});
+
+/* GET Shingo Faculty Fellows Page. */
+router.get('/faculty-fellows', function(request, response, next) {
+
+  //Query SalesForce
+  const query = "SELECT Id, Name, Title, Account.Name, Photograph__c, Biography__c FROM Contact WHERE Shingo_Prize_Relationship__c INCLUDES('Faculty Fellow') ORDER BY LastName";
+  conn.query(query, function(err, res) {
+    if (err) { return console.error(err); }
+
+    // RENDER VIEW
+    response.render('About/faculty-fellows', 
+    { title: 'Shingo Faculty Fellows',
+      members: res.records});
+  });
+});
+
+/* GET Shingo profile page for faculty fellow. */
+router.get('/faculty-fellows/:id', function(request, response, next) {
+
+  //Query SalesForce
+  const query = "SELECT Id, Name, Title, Account.Name, Photograph__c,Biography__c FROM Contact WHERE Id = '" + request.params.id + "' AND Shingo_Prize_Relationship__c INCLUDES('Faculty Fellow') ORDER BY LastName";
+  conn.query(query, function(err, res) {
+    if (err) { return console.error(err); }
+
+    console.log(res.records[0].Name)
+
+    // RENDER VIEW
+    response.render('About/facultyFellowTemplate', 
+    { title: res.records[0].Name + ' - ' + res.records[0].Title,
+      member: res.records[0]});
   });
 });
 

@@ -29,7 +29,7 @@ setInterval(function() {
 // GET Home Page
 router.get('/', function(request, response, next) {
 
-    const routes = ['/','/about/academy','about/alumni','about/site-examiners','about/research-examiners','about/staff','/affiliates','awards/prize-recipients','awards/research','awards/publication','/events','/presentations','/workshops'];
+    const routes = ['/','/about/academy','about/alumni','about/site-examiners','about/research-examiners','about/staff','about/seab','about/faculty-fellows','/affiliates','awards/prize-recipients','awards/research','awards/publication','/events','/presentations','/workshops'];
     
     // RENDER VIEW
     response.render('index', 

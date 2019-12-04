@@ -2,15 +2,15 @@ extends ../layout
 
 block content
     ul(class="profile-pic-list")
-        each employee in employees
+        each member in employees
             li
-                img(src="#{employee.Photograph__c}" class="profile-pic")
+                img(src="#{member.Photograph__c}" class="profile-pic")
                 div
-                    h2= employee.Name
-                    h3= employee.Title
-                    a(href="tel:#{employee.Phone}")
-                        p= employee.Phone
-                if employee.Email
-                    a(href="mailto:#{employee.Email}")
+                    h2= member.Name
+                    h3= member.Title
+                    a(href="tel:#{member.Phone}")
+                        p= member.Phone
+                if member.Email
+                    a(href="mailto:#{member.Email}")
                         img(src="/images/letter.png" class="letter-icon")
         
