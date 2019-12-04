@@ -4,10 +4,13 @@ block content
     ul(class="profile-pic-list")
         each employee in employees
             li
-                img(src="#{employee.Photograph__c}")
+                img(src="#{employee.Photograph__c}" class="profile-pic")
                 div
                     h2= employee.Name
                     h3= employee.Title
                     a(href="tel:#{employee.Phone}")
                         p= employee.Phone
+                if employee.Email
+                    a(href="mailto:#{employee.Email}")
+                        img(src="/images/letter.png" class="letter-icon")
         

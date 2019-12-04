@@ -103,7 +103,7 @@ ul.profile-pic-list li {
   vertical-align: top;
 }
 
-ul.profile-pic-list img {
+ul.profile-pic-list img.profile-pic {
   border-radius: 55px;
   height: 200px;
   width: 200px;
@@ -115,6 +115,14 @@ ul.profile-pic-list h2 {
 
 ul.profile-pic-list h3 {
   font-weight: 100;
+}
+
+ul.profile-pic-list div {
+  height: 120px;
+}
+
+img.letter-icon {
+  width: 30px;
 }
 
 
