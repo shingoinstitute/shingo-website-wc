@@ -5,7 +5,7 @@ block content
         h1= conference
         if(files)
             each file in files
-                a(href="#{file.file}")
+                a(href="#{file.file}" download)
                     p= file.name
         else
             p No files to download. Please check back later...
