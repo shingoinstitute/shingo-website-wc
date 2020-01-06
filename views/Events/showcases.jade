@@ -2,7 +2,6 @@ extends ../layout
 
 block content
     div(style='text-align: center;')
-        h1 Showcases
         each event in events   
             div(class='event-card')
                 div(class="event-image" style="background-image: url(#{event.Banner_URL__c})")

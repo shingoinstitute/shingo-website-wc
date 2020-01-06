@@ -1,79 +1,79 @@
 /* EVENT PAGES */
 div.event-card {
-    padding: 20px 25px;
-    border: solid .5px #bbb;
-    margin: 25px 15%;
-    background-color: #fff;
+  padding: 20px 25px;
+  border: solid 0.5px #bbb;
+  margin: 25px 15%;
+  background-color: #fff;
 }
 
 div.event-image {
-    display: inline-block;
-    height: 250px;
-    max-width: 600px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    }
+  display: inline-block;
+  height: 250px;
+  max-width: 600px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 
 p.registration-deadline {
-    background-color: #1e508b;
-    height: 40px;
-    margin-top: 210px;
-    padding-top: 10px;
-    padding-left: 12px;
-    }
+  background-color: #1e508b;
+  height: 40px;
+  margin-top: 210px;
+  padding-top: 10px;
+  padding-left: 12px;
+}
 
 div.event-card h2 {
-    text-align: left;
-    }
+  text-align: left;
+}
 
 div.event-card h3 {
-    font-size: 18px;
-    font-weight: 200;
-    text-align: left;
-    }
+  font-size: 16px;
+  font-weight: 200;
+  text-align: left;
+}
 
 div.event-card div {
-    display: inline-block;
-    width: 40%;
-    margin-left: 5%;
-    vertical-align: top;
-    }
+  display: inline-block;
+  width: 40%;
+  margin-left: 5%;
+  vertical-align: top;
+}
 
 div.event-card div p {
-    color: #999;
-    font-size: 17px;
-    text-align: left;
-    }
+  color: #999;
+  font-size: 17px;
+  text-align: left;
+}
 
 div.event-card div a {
-    text-decoration: none;
-    margin-top: 12px;
-    }
+  text-decoration: none;
+  margin-top: 12px;
+}
 
 div.event-card div a p {
-    color: #eee;
-    background-color: #f99800;
-    width: 150px;
-    height: 30px;
-    margin: 0 auto;
-    padding-top: 10px;
-    border-radius: 5px;
-    margin-top: 20px;
-    text-align: center;
-    }
+  color: #eee;
+  background-color: #f99800;
+  width: 150px;
+  height: 30px;
+  margin: 0 auto;
+  padding-top: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+  text-align: center;
+}
 
 @media only screen and (max-width: 990px) {
-div.event-card div {
+  div.event-card div {
     width: 100%;
     margin-left: 0;
-    }
-div.event-card {
+  }
+  div.event-card {
     margin: 20px 0;
     padding: 20px 10%;
-    }
+  }
 
-div.event-image {
+  div.event-image {
     float: left;
-    }
+  }
 }
