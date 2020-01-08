@@ -1,0 +1,15 @@
+extends ../layout 
+
+block content
+    div(style='text-align: center;')
+        each event in events   
+            div(class='event-card')
+                div(class="event-image" style="background-image: url(#{event.Banner_URL__c})")
+                    if event.Registration_Deadline__c
+                        p(class="registration-deadline" style="color: white;") ** Registration Closes #{event.Registration_Deadline__c}
+                div
+                    h2= event.Name
+                    h3 #{event.End_Date__c} | #{event.Display_Location__c}
+                    p !{event.Company_Bio__c}
+                    a(href="#{event.Registration_Link__c}" target="_blank")
+                        p Learn More
