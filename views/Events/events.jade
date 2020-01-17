@@ -7,7 +7,7 @@ block content
             case event.Event_Type__c
                 when 'Conference'
                     div(class='event-card')
-                        div(class="event-image" style="background-image: url(#{event.Banner_URL__c})")
+                        div(class="event-image" style="background-image: url(#{event.Banner_URL__c}); margin: auto 0;")
                         div
                             h2= event.Name
                             h3 #{event.Start_Date__c} - #{event.End_Date__c} | #{event.Display_Location__c}
@@ -23,12 +23,20 @@ block content
                             p Conferences and summits keep your continuous improvement efforts fresh and invigorated. Conferences are larger and apply to any industry. Summits are smaller and focus on specific industries.
                             a(href="#{event.Registration_Link__c}" target="_blank")
                                 p Learn More
+        div(class='event-card')
+            div(class="event-image" style="background-image: url('https://res.cloudinary.com/shingo/image/upload/v1579116329/Events/RegionalConference/Old_Main_Pano.jpg'); margin: auto 0;")
+            div
+                h2 Best Practices in Lean Education Summit
+                h3 28 - 30 June, 2020 | Logan, Utah
+                p The focus will be on pedagogy for teaching lean, with sessions to explore cases/simulations and other experiential pedagogies, leveraging site visits, teaching lean outside manufacturing, leveraging industry/university partnerships for teaching/student development, and other best practices/innovations. Sessions will be on idea sharing, interaction, and energetic engagement!
+                a(href="https://cvent.me/KbEPVB" target="_blank")
+                    p Learn More
         h1 Study Tours
         each event in events
             case event.Event_Type__c
                 when 'Study Tour'
                     div(class='event-card')
-                        div(class="event-image" style="background-image: url(#{event.Banner_URL__c})")
+                        div(class="event-image" style="background-image: url(#{event.Banner_URL__c}); margin: auto 0;")
                         div
                             h2= event.Name
                             h3 #{event.Start_Date__c} - #{event.End_Date__c} | #{event.Display_Location__c}
@@ -40,7 +48,7 @@ block content
             case event.Event_Type__c
                 when 'Showcase'
                     div(class='event-card')
-                        div(class="event-image" style="background-image: url(#{event.Banner_URL__c})")
+                        div(class="event-image" style="background-image: url(#{event.Banner_URL__c}); margin: auto 0;")
                         div
                             h2= event.Name
                             h3 #{event.End_Date__c} | #{event.Display_Location__c}
