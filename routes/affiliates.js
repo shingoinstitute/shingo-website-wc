@@ -23,7 +23,7 @@ router.get('/', function(request, response, next) {
 });
   
   
-  /* GET Affiliate page for specific affiliate. */
+  /* GET Affiliate page for a specific affiliate. */
 router.get('/:id', function(request, response, next) {
 
     //Query SalesForce (first for faciliators related to affiliate)
