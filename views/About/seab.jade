@@ -5,7 +5,7 @@ block content
         each member in members
             li
                 img(src="#{member.Photograph__c}" class="profile-pic")
-                div
+                div(class="staff")
                     h2= member.Name
                     h3= member.Title
                     h3= member.Account.Name
