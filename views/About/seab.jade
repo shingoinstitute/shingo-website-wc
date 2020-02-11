@@ -3,12 +3,16 @@ extends ../layout
 block content
     ul(class="profile-pic-list")
         each member in members
-            li
+            li(class="card h-50 p-4" style="width: 14rem;")
                 img(src="#{member.Photograph__c}" class="profile-pic")
                 div(class="staff")
-                    h2= member.Name
-                    h3= member.Title
-                    h3= member.Account.Name
+                    h3= member.Name
+                    h4= member.Title
+                    h4= member.Account.Name
                 a(href="/about/seab/" + member.Id)
                     p About >>
+                    
+                    
+                    
+                    
                 

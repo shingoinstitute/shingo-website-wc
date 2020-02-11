@@ -22,7 +22,7 @@ router.get('/prize-recipients', function(request, response, next) {
         var dateAwarded = res.records[i].Date_Awarded__c;
         res.records[i].Date_Awarded__c = fecha.format(new Date(dateAwarded), 'YYYY');
       }
-  
+      console.log(res.records);
       // RENDER VIEW
       response.render('Awards/prizeRecipients', 
       { title: 'Awards - Shingo Prize Recipients',
