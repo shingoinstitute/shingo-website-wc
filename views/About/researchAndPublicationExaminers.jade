@@ -29,10 +29,19 @@ block content
             th VP Supply Chain
             th O.C. Tanner Company
         tr(class="row-headers")
-            th Examiner
+            th Research Examiner
             th Position
             th Company
-        each examiner in examiners
+        each examiner in research_examiners
+            tr
+                th= examiner.Name
+                th= examiner.Title
+                th= examiner.Account.Name
+        tr(class="row-headers")
+            th Publication Examiner
+            th Position
+            th Company
+        each examiner in publication_examiners
             tr
                 th= examiner.Name
                 th= examiner.Title

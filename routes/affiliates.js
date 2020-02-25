@@ -24,7 +24,6 @@ router.get("/", function(request, response, next) {
     }
 
     // RENDER VIEW
-    console.log(res.records);
     response.render("Workshops/affiliates", {
       title: "Affiliates",
       affiliates: res.records
@@ -56,7 +55,6 @@ router.get("/:id", function(request, response, next) {
         return console.error(err);
       }
 
-      console.log(res1.records);
       // RENDER VIEW
       response.render("Workshops/affiliateTemplate", {
         title: "Affiliates",

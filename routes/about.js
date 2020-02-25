@@ -71,16 +71,25 @@ router.get("/site-examiners", function(request, response, next) {
 router.get("/research-examiners", function(request, response, next) {
   //Query SalesForce
   const query =
-    "SELECT Id, Name, Title, Account.Name FROM Contact WHERE Shingo_Prize_Relationship__c INCLUDES('Research Examiner','Publication Examiner') ORDER BY LastName";
+    "SELECT Id, Name, Title, Account.Name FROM Contact WHERE Shingo_Prize_Relationship__c INCLUDES('Research Examiner') ORDER BY LastName";
   conn.query(query, function(err, res) {
     if (err) {
       return console.error(err);
     }
+    const innerQuery =
+      "SELECT Id, Name, Title, Account.Name FROM Contact WHERE Shingo_Prize_Relationship__c INCLUDES('Publication Examiner') ORDER BY LastName";
+    conn.query(innerQuery, (err1, res1) => {
+      if (err1) {
+        console.error(err1);
+      }
 
-    // RENDER VIEW
-    response.render("About/researchAndPublicationExaminers", {
-      title: "Shingo Research & Publication Examiners",
-      examiners: res.records
+      console.log(res.records);
+      // RENDER VIEW
+      response.render("About/researchAndPublicationExaminers", {
+        title: "Shingo Research & Publication Examiners",
+        research_examiners: res.records,
+        publication_examiners: res1.records
+      });
     });
   });
 });
