@@ -10,8 +10,7 @@ block content
                         div(class="event-image" style="background-image: url(#{event.Banner_URL__c}); margin: auto 0;")
                         div
                             h2= event.Name
-                            h3 #{event.Start_Date__c} - #{event.End_Date__c} | #{event.Display_Location__c}
-                            p Conferences and summits keep your continuous improvement efforts fresh and invigorated. Conferences are larger and apply to any industry. Summits are smaller and focus on specific industries.
+                            h3 #{event.Start_Date__c}-#{event.End_Date__c} | #{event.Display_Location__c}
                             a(href="#{event.Registration_Link__c}" target="_blank")
                                 p Learn More
                 when 'Summit'
@@ -19,8 +18,7 @@ block content
                         div(class="event-image" style="background-image: url(#{event.Banner_URL__c})")
                         div
                             h2= event.Name
-                            h3 #{event.Start_Date__c} - #{event.End_Date__c} | #{event.Display_Location__c}
-                            p Conferences and summits keep your continuous improvement efforts fresh and invigorated. Conferences are larger and apply to any industry. Summits are smaller and focus on specific industries.
+                            h3 #{event.Start_Date__c}-#{event.End_Date__c} | #{event.Display_Location__c}
                             a(href="#{event.Registration_Link__c}" target="_blank")
                                 p Learn More
         div(class='event-card')
@@ -28,7 +26,6 @@ block content
             div
                 h2 Best Practices in Lean Education Summit
                 h3 28 - 30 June, 2020 | Logan, Utah
-                p The focus will be on pedagogy for teaching lean, with sessions to explore cases/simulations and other experiential pedagogies, leveraging site visits, teaching lean outside manufacturing, leveraging industry/university partnerships for teaching/student development, and other best practices/innovations. Sessions will be on idea sharing, interaction, and energetic engagement!
                 a(href="https://cvent.me/KbEPVB" target="_blank")
                     p Learn More
         h1 Study Tours
@@ -39,8 +36,7 @@ block content
                         div(class="event-image" style="background-image: url(#{event.Banner_URL__c}); margin: auto 0;")
                         div
                             h2= event.Name
-                            h3 #{event.Start_Date__c} - #{event.End_Date__c} | #{event.Display_Location__c}
-                            p Study Tours provide a deeper understanding of Shingo tenets. See firsthand how Shingo Principles can apply to any organization as you tour top-flight facilities and some Shingo award recipients.
+                            h3 #{event.Start_Date__c}-#{event.End_Date__c} | #{event.Display_Location__c}
                             a(href="#{event.Registration_Link__c}" target="_blank")
                                 p Learn More
         h1 Showcases
@@ -51,8 +47,7 @@ block content
                         div(class="event-image" style="background-image: url(#{event.Banner_URL__c}); margin: auto 0;")
                         div
                             h2= event.Name
-                            h3 #{event.End_Date__c} | #{event.Display_Location__c}
-                            p Shingo Showcases give you access to the inner workings of a Shingo award recipient company that exemplifies excellence. They are one-day events that include an exclusive company tour and a workshop that will teach (or refresh) the basics of the Shingo Model™, why it’s important, and how it can help you make organizational excellence sustainable. 
+                            h3 #{event.Start_Date__c} | #{event.Display_Location__c} 
                             a(href="#{event.Registration_Link__c}" target="_blank")
                                 p Learn More
                 

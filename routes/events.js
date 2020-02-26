@@ -29,13 +29,13 @@ router.get("/", function(request, response, next) {
       var dateStringStart = res.records[i].Start_Date__c;
       res.records[i].Start_Date__c = fecha.format(
         new Date(dateStringStart),
-        "D "
+        "MMMM D"
       );
 
       var dateStringEnd = res.records[i].End_Date__c;
       res.records[i].End_Date__c = fecha.format(
         new Date(dateStringEnd),
-        "D MMMM, YYYY"
+        "D, YYYY"
       );
     }
 
