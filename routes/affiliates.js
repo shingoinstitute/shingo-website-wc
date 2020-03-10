@@ -22,7 +22,6 @@ router.get("/", function(request, response, next) {
     if (err) {
       return console.error(err);
     }
-
     // RENDER VIEW
     response.render("Workshops/affiliates", {
       title: "Affiliates",
