@@ -37,8 +37,73 @@ router.get("/prize-recipients", function(request, response, next) {
       );
     }
 
-    // RENDER VIEW
+    // SEND JSON
     response.send(res.records);
+  });
+});
+
+/* GET Research Awards Page. */
+router.get("/research", function(request, response, next) {
+  //Query SalesForce
+  const query =
+    "SELECT Id, Name, Public_Author_Name__c, Press_Release_Date__c, Press_Release_Link__c FROM Research_Award__c WHERE Published__c=true ORDER BY Press_Release_Date__c DESC";
+  conn.query(query, function(err, res) {
+    if (err) {
+      return console.error(err);
+    }
+
+    for (let i = 0; i < res.records.length; i++) {
+      var dateAwarded = res.records[i].Press_Release_Date__c;
+      res.records[i].Press_Release_Date__c = fecha.format(
+        new Date(dateAwarded),
+        "YYYY"
+      );
+    }
+
+    // SEND JSON
+    response.send(res.records);
+  });
+});
+
+/* GET Publication Awards Page. */
+router.get("/publication", function(request, response, next) {
+  //Query SalesForce
+  const query =
+    "Select Id, Name, Public_Author_Name__c, Press_Release_Date__c FROM Publication_Award__c WHERE Published__c=true ORDER BY Press_Release_Date__c DESC";
+  conn.query(query, function(err, res) {
+    if (err) {
+      return console.error(err);
+    }
+
+    for (let i = 0; i < res.records.length; i++) {
+      var dateAwarded = res.records[i].Press_Release_Date__c;
+      res.records[i].Press_Release_Date__c = fecha.format(
+        new Date(dateAwarded),
+        "MMM YYYY"
+      );
+    }
+
+    // SEND JSON
+    response.send(res.records);
+  });
+});
+
+/* GET Specific Publication Award Page. */
+router.get("/publication/:id", function(request, response, next) {
+  //Query SalesForce
+  const query =
+    "Select Id, Name, Public_Author_Name__c, Press_Release_Date__c,Cover_Image__c, Order_Url__c, Published__c, Embedded_Youtube_Url__c, Press_Release_Copy__c FROM Publication_Award__c WHERE Published__c=true AND Id=" +
+    "'" +
+    request.params.id +
+    "'" +
+    " ORDER BY Press_Release_Date__c DESC";
+  conn.query(query, function(err, res) {
+    if (err) {
+      return console.error(err);
+    }
+
+    // RENDER VIEW
+    response.send(res.records[0]);
   });
 });
 
@@ -53,7 +118,7 @@ router.get("/affiliates", function(request, response, next) {
     if (err) {
       return console.error(err);
     }
-    // RENDER VIEW
+    // SEND JSON
     response.send(res.records);
   });
 });
@@ -66,7 +131,6 @@ router.get("/affiliates/:id", function(request, response, next) {
     request.params.id +
     "' ORDER BY LastName";
   conn.query(query, function(err, res) {
-    // console.log(res)
     if (err) {
       return console.error(err);
     }
@@ -82,7 +146,7 @@ router.get("/affiliates/:id", function(request, response, next) {
         return console.error(err);
       }
 
-      // RENDER VIEW
+      // SEND JSON
       response.send({
         affiliate: res1.records[0],
         facilitators: res.records
@@ -118,7 +182,7 @@ router.get("/events", function(request, response, next) {
       );
     }
 
-    // RENDER VIEW
+    // SEND JSON
     response.send(res.records);
   });
 });
@@ -168,7 +232,7 @@ router.get("/workshops", function(request, response, next) {
         workshopCountries.push(res.records[i].Event_Country__c);
       }
     }
-    // RENDER VIEW
+    // SEND JSON
     response.send({
       title: "Shingo Workshop Schedule",
       workshops: res.records,
@@ -215,7 +279,7 @@ router.get("/:workshopType", function(request, response, next) {
       );
     }
 
-    // RENDER VIEW
+    // SEND JSON
     response.send(res.records);
   });
 });
