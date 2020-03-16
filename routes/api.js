@@ -19,7 +19,7 @@ conn.login(
 );
 
 //AWARDS PAGES
-/* GET Shingo Prize Awards Page. */
+/* GET Shingo Prize Awards Page */
 router.get("/prize-recipients", function(request, response, next) {
   //Query SalesForce
   const query =
