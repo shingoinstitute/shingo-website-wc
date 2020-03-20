@@ -20,7 +20,7 @@ conn.login(
 router.get("/", function(request, response, next) {
   //Query SalesForce
   const query =
-    "SELECT Id,Name,Workshop_Type__c,Start_Date__c, End_Date__c,Event_City__c,Event_Country__c, Host_Site__c,Affiliate__c,Registration_Website__c FROM Workshop__c WHERE Public__c=true AND Status__c='Verified' ORDER BY Start_Date__c";
+    "SELECT Id,Name,Workshop_Type__c,Start_Date__c, End_Date__c,Event_City__c,Event_Country__c, Host_Site__c,Affiliate__c,Registration_Website__c,Virtual_Workshop__c FROM Workshop__c WHERE Public__c=true AND Status__c='Verified' ORDER BY Start_Date__c";
   conn.query(query, function(err, res) {
     if (err) {
       return console.error(err);
@@ -59,6 +59,7 @@ router.get("/", function(request, response, next) {
         workshopCountries.push(res.records[i].Event_Country__c);
       }
     }
+
     // RENDER VIEW
     response.render("Workshops/workshops", {
       title: "Shingo Workshop Schedule",
@@ -74,7 +75,7 @@ router.get("/", function(request, response, next) {
 router.get("/:workshopType", function(request, response, next) {
   //Query SalesForce
   const query =
-    "SELECT Id,Name,Workshop_Type__c,Start_Date__c, End_Date__c,Event_City__c,Event_Country__c, Host_Site__c,Affiliate__c,Registration_Website__c FROM Workshop__c WHERE (Public__c=true AND Status__c='Verified') and Workshop_Type__c = " +
+    "SELECT Id,Name,Workshop_Type__c,Start_Date__c, End_Date__c,Event_City__c,Event_Country__c, Host_Site__c,Affiliate__c,Registration_Website__c,Virtual_Workshop__c FROM Workshop__c WHERE (Public__c=true AND Status__c='Verified') and Workshop_Type__c = " +
     "'" +
     request.params.workshopType +
     "'" +

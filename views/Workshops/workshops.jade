@@ -15,14 +15,23 @@ block content
                 each workshopCountry in workshopCountries
                     option(value="#{workshopCountry}")= workshopCountry
         div
+            h3 Virtual Workshops:
+            label(class="checkbox")
+                input(type="checkbox" name="virtualWorkshops" onchange="filterWorkshops()")
+                span Display Only Virtual Workshops
+        div
             h3 Clear Filters
             button(onclick='clearFilters()') Clear
     ul(class='workshop-list')
         each workshop in workshops
             a(href='#{workshop.Registration_Website__c}' target="_blank")
                 li(class='workshop-card' name="#{workshop.Workshop_Type__c}")
+                    if workshop.Virtual_Workshop__c
+                        div(class="virtual-workshop-banner") Virtual Workshop
+                    else 
+                        div(style="height: 24px")
                     h2= workshop.Workshop_Type__c
-                    div
+                    div(class="workshop-info")
                         p #{workshop.Start_Date__c}-#{workshop.End_Date__c}
                         p(style="display: inline;") #{workshop.Event_City__c}, 
                         p(style="display: inline;") #{workshop.Event_Country__c}

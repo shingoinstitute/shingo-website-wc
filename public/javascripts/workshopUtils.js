@@ -8,35 +8,43 @@ const filterWorkshops = function() {
   var selectedCountry =
     countrySelector.options[countrySelector.selectedIndex].value;
 
+  var virtualWorkshopCheckBox = document.getElementsByName("virtualWorkshops");
+
   const workshops = document.getElementsByClassName("workshop-card");
 
   for (let i = 0; i < workshops.length; i++) {
-    if (
-      workshops[i].firstChild.innerHTML == selectedType &&
-      workshops[i].children[1].children[2].innerHTML == selectedCountry
-    ) {
-      workshops[i].style.display = "inline-block";
-    } else if (
-      selectedType == "All" &&
-      workshops[i].children[1].children[2].innerHTML == selectedCountry
-    ) {
-      workshops[i].style.display = "inline-block";
-    } else if (
-      selectedCountry == "All" &&
-      workshops[i].firstChild.innerHTML == selectedType
-    ) {
-      workshops[i].style.display = "inline-block";
-    } else if (selectedCountry == "All" && selectedType == "All") {
-      workshops[i].style.display = "inline-block";
-    } else {
-      workshops[i].style.display = "none";
+    // by default, each workshop will display, if any of the filter checks are not met, display will be set to "none"
+    var display = "";
+
+    // handles filtering for workshop type
+    if (selectedType !== "All") {
+      if (workshops[i].children[1].innerHTML !== selectedType) {
+        display = "none";
+      }
     }
+
+    // handles filtering for workshop country
+    if (selectedCountry !== "All") {
+      if (workshops[i].children[2].children[2].innerHTML !== selectedCountry) {
+        display = "none";
+      }
+    }
+
+    // handles filtering for virtual workshops
+    if (virtualWorkshopCheckBox[0].checked) {
+      if (workshops[i].children[0].innerHTML !== "Virtual Workshop") {
+        display = "none";
+      }
+    }
+
+    workshops[i].style.display = display;
   }
 };
 
 const clearFilters = function() {
   document.getElementsByName("workshopType")[0].selectedIndex = 0;
   document.getElementsByName("workshopCountry")[0].selectedIndex = 0;
+  document.getElementsByName("virtualWorkshops")[0].checked = false;
   filterWorkshops();
 };
 
