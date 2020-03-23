@@ -26,13 +26,17 @@ block content
         each workshop in workshops
             a(href='#{workshop.Registration_Website__c}' target="_blank")
                 li(class='workshop-card' name="#{workshop.Workshop_Type__c}")
-                    if workshop.Virtual_Workshop__c
-                        div(class="virtual-workshop-banner") Virtual Workshop
-                    else 
-                        div(style="height: 24px")
+                    case workshop.RecordType.Name
+                        when "Virtual Workshop"
+                            div(class="virtual-workshop-banner") Virtual Workshop
+                        default 
+                            div(style="height: 24px")
                     h2= workshop.Workshop_Type__c
                     div(class="workshop-info")
                         p #{workshop.Start_Date__c}-#{workshop.End_Date__c}
+                        case workshop.RecordType.Name
+                            when "Virtual_Workshop"
+                                p=workshop.Timezone__c
                         p(style="display: inline;") #{workshop.Event_City__c}, 
                         p(style="display: inline;") #{workshop.Event_Country__c}
                         h4(class="host-site-title") Host Site:
