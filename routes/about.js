@@ -13,7 +13,7 @@ conn.login(
   }
 );
 
-/* GET Shingo Academy Members Page. */
+/* GET Shingo Academy Members Page */
 router.get("/academy", function(request, response, next) {
   //Query SalesForce
   const query =
