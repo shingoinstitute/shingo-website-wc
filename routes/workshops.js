@@ -20,7 +20,7 @@ conn.login(
 router.get("/", function(request, response, next) {
   //Query SalesForce
   const query =
-    "SELECT Id,Name,Workshop_Type__c,Start_Date__c, End_Date__c,Timezone__c, Event_City__c,Event_Country__c, Host_Site__c,Affiliate__c,Registration_Website__c,RecordType.Name FROM Workshop__c WHERE Public__c=true AND Status__c='Verified' ORDER BY Start_Date__c";
+    "SELECT Id,Name,Workshop_Type__c,Start_Date__c, End_Date__c,Timezone__c,Event_City__c,Event_Country__c, Host_Site__c,Affiliate__c,Registration_Website__c,RecordType.Name FROM Workshop__c WHERE Public__c=true AND Status__c='Verified' ORDER BY Start_Date__c";
   conn.query(query, function(err, res) {
     if (err) {
       return console.error(err);
@@ -30,7 +30,7 @@ router.get("/", function(request, response, next) {
     var workshopTypes = [];
     var workshopCountries = [];
 
-    //Format Dates and Workshop Names
+    //Format Dates and Workshop Names and start/end times
     for (let i = 0; i < res.records.length; i++) {
       var dateStringStart = res.records[i].Start_Date__c;
       res.records[i].Start_Date__c = fecha.format(

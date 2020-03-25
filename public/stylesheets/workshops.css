@@ -81,12 +81,11 @@ div.workshop-info {
 
 li.workshop-card h2 {
   font-size: 20px;
-  height: 45px;
+  height: 40px;
 }
 
 li.workshop-card p {
   color: #888;
-  height: 20px;
 }
 
 li.workshop-card a {
@@ -107,8 +106,7 @@ li.workshop-card p.register-button-text {
 li.workshop-card h4 {
   color: #333;
   font-size: 16px;
-  margin: 5px auto;
-  height: 10px;
+  margin: 2px 0px;
 }
 
 li.workshop-card h4.host-site-title {
@@ -119,7 +117,7 @@ li[name="Discover Excellence"] {
   background-image: url("/images/DiscoverButton.png");
   background-size: 200px;
   background-position-x: 110px;
-  background-position-y: 275px;
+  background-position-y: 300px;
   background-repeat: no-repeat;
 }
 
@@ -127,7 +125,7 @@ li[name="Systems Design"] {
   background-image: url("/images/SystemsButton.png");
   background-size: 200px;
   background-position-x: 110px;
-  background-position-y: 275px;
+  background-position-y: 300px;
   background-repeat: no-repeat;
 }
 
@@ -135,7 +133,7 @@ li[name="Cultural Enablers"] {
   background-image: url("/images/EnableButton.png");
   background-size: 200px;
   background-position-x: 110px;
-  background-position-y: 275px;
+  background-position-y: 300px;
   background-repeat: no-repeat;
 }
 
@@ -143,7 +141,7 @@ li[name="Continuous Improvement"] {
   background-image: url("/images/ImproveButton.png");
   background-size: 200px;
   background-position-x: 110px;
-  background-position-y: 275px;
+  background-position-y: 300px;
   background-repeat: no-repeat;
 }
 
@@ -151,7 +149,7 @@ li[name="Enterprise Alignment"] {
   background-image: url("/images/AlignButton.png");
   background-size: 200px;
   background-position-x: 110px;
-  background-position-y: 275px;
+  background-position-y: 300px;
   background-repeat: no-repeat;
 }
 
@@ -159,7 +157,7 @@ li[name="Build Excellence"] {
   background-image: url("/images/BuildButton.png");
   background-size: 200px;
   background-position-x: 110px;
-  background-position-y: 275px;
+  background-position-y: 300px;
   background-repeat: no-repeat;
 }
 
