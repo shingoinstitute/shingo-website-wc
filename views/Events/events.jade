@@ -21,13 +21,6 @@ block content
                             h3 #{event.Start_Date__c}-#{event.End_Date__c} | #{event.Display_Location__c}
                             a(href="#{event.Registration_Link__c}" target="_blank")
                                 p Learn More
-        div(class='event-card')
-            div(class="event-image" style="background-image: url('https://res.cloudinary.com/shingo/image/upload/v1579116329/Events/RegionalConference/Old_Main_Pano.jpg'); margin: auto 0;")
-            div
-                h2 Best Practices in Lean Education Summit
-                h3 28 - 30 June, 2020 | Logan, Utah
-                a(href="https://cvent.me/KbEPVB" target="_blank")
-                    p Learn More
         h1 Study Tours
         each event in events
             case event.Event_Type__c
