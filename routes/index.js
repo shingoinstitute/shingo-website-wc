@@ -30,7 +30,7 @@ conn.login(
 // this is a simple script to ping the site once per min to keep it alive with artificial traffic.
 setInterval(function() {
   http.get("http://apps.shingo.org/");
-}, 30000); // every 5 minutes (300000)
+}, 300000); // every 5 minutes (300000)
 
 //--------------------------------------------------------------------------------------------------------------------------------------
 // GET Home Page
