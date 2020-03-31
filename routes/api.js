@@ -341,7 +341,7 @@ router.get("/events", function(request, response, next) {
 router.get("/workshops", function(request, response, next) {
   //Query SalesForce
   const query =
-    "SELECT Id,Name,Workshop_Type__c,Start_Date__c, End_Date__c,Timezone__c,Event_City__c,Event_Country__c, Host_Site__c,Affiliate__c,Registration_Website__c,RecordType.Name FROM Workshop__c WHERE Public__c=true AND Status__c='Verified' ORDER BY Start_Date__c";
+    "SELECT Id,Name,Workshop_Type__c,Start_Date__c, End_Date__c,Timezone__c,Event_City__c,Event_Country__c, Host_Site__c,Affiliate__c,Registration_Website__c,RecordType.Name FROM Workshop__c WHERE Public__c=true AND (Status__c='Verified' OR Status__c='Action Pending') ORDER BY Start_Date__c";
   conn.query(query, function(err, res) {
     if (err) {
       return console.error(err);
@@ -396,7 +396,7 @@ router.get("/workshops", function(request, response, next) {
 router.get("/:workshopType", function(request, response, next) {
   //Query SalesForce
   const query =
-    "SELECT Id,Name,Workshop_Type__c,Start_Date__c, End_Date__c,Timezone__c, Event_City__c,Event_Country__c, Host_Site__c,Affiliate__c,Registration_Website__c,RecordType.Name FROM Workshop__c WHERE (Public__c=true AND Status__c='Verified') and Workshop_Type__c = " +
+    "SELECT Id,Name,Workshop_Type__c,Start_Date__c, End_Date__c, Timezone__c, Event_City__c,Event_Country__c, Host_Site__c,Affiliate__c,Registration_Website__c,RecordType.Name FROM Workshop__c WHERE Public__c=true AND (Status__c='Verified' OR Status__c='Action Pending') and Workshop_Type__c = " +
     "'" +
     request.params.workshopType +
     "'" +
