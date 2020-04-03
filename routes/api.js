@@ -5,6 +5,7 @@ const express = require("express");
 const router = express.Router();
 const jsforce = require("jsforce");
 const fecha = require("fecha");
+const workshops = require("../public/javascripts/workshopUtils");
 const conn = new jsforce.Connection();
 
 conn.login(
