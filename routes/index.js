@@ -35,28 +35,32 @@ setInterval(function() {
 //--------------------------------------------------------------------------------------------------------------------------------------
 // GET Home Page
 router.get("/", function(request, response, next) {
-  const routes = [
-    "/",
-    "/about/academy",
-    "about/alumni",
-    "about/site-examiners",
-    "about/research-examiners",
-    "about/staff",
-    "about/seab",
-    "about/faculty-fellows",
-    "/affiliates",
-    "awards/prize-recipients",
-    "awards/research",
-    "awards/publication",
-    "/events",
-    "/presentations",
-    "/workshops"
+  const aboutRoutes = [
+    "api/academy",
+    "api/alumni",
+    "api/site-examiners",
+    "api/research-examiners",
+    "api/staff",
+    "api/seab",
+    "api/faculty-fellows"
   ];
+
+  const awardRoutes = [
+    "api/prize-recipients",
+    "api/research",
+    "api/publication"
+  ];
+
+  const workshopRoutes = ["api/affiliates", "api/workshops"];
+  const eventRoutes = ["api/events"];
 
   // RENDER VIEW
   response.render("index", {
     title: "Shingo Website WC - Home",
-    routes: routes
+    aboutRoutes: aboutRoutes,
+    awardRoutes: awardRoutes,
+    workshopRoutes: workshopRoutes,
+    eventRoutes: eventRoutes
   });
 });
 

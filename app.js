@@ -7,12 +7,6 @@ var cors = require("cors");
 require("dotenv").config();
 
 var indexRouter = require("./routes/index");
-var affiliateRouter = require("./routes/affiliates");
-var workshopRouter = require("./routes/workshops");
-var eventsRouter = require("./routes/events");
-var awardsRouter = require("./routes/awards");
-var aboutRouter = require("./routes/about");
-var presentationRouter = require("./routes/presentations");
 var apiRouter = require("./routes/api");
 
 var app = express();
@@ -29,12 +23,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 
 app.use("/", indexRouter);
-app.use("/affiliates", affiliateRouter);
-app.use("/workshops", workshopRouter);
-app.use("/events", eventsRouter);
-app.use("/awards", awardsRouter);
-app.use("/about", aboutRouter);
-app.use("/presentations", presentationRouter);
 app.use("/api", apiRouter);
 
 // catch 404 and forward to error handler

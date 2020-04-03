@@ -2,9 +2,22 @@ extends layout
 
 block content
     div(style="text-align: center;")
-        h1 Shingo Website Web Components
-        div
-            each route in routes
+        h1 Shingo Website API Routes
+        div(style="margin-bottom: 50px")
+            h2(style="margin-top: 40px") About Routes:
+            each route in aboutRoutes
+                a(href=route)
+                    p= route
+            h2(style="margin-top: 40px") Award Routes:
+            each route in awardRoutes
+                a(href=route)
+                    p= route
+            h2(style="margin-top: 40px") Workshop Routes:
+            each route in workshopRoutes
+                a(href=route)
+                    p= route
+            h2(style="margin-top: 40px") Event Routes:
+            each route in eventRoutes
                 a(href=route)
                     p= route
             
