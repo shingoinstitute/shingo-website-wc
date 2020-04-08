@@ -12,7 +12,7 @@ const conn = new jsforce.Connection();
 conn.login(
   process.env.SF_USERNAME,
   process.env.SF_PASSWORD + process.env.SF_SECURITY_TOKEN,
-  function(err, res) {
+  function (err, res) {
     if (err) {
       return console.error(err);
     } else {
@@ -28,13 +28,13 @@ conn.login(
 
 //Heroku will put your app to sleep if it does not get traffic for a certain period of time
 // this is a simple script to ping the site once per min to keep it alive with artificial traffic.
-setInterval(function() {
+setInterval(function () {
   http.get("http://apps.shingo.org/");
 }, 300000); // every 5 minutes (300000)
 
 //--------------------------------------------------------------------------------------------------------------------------------------
 // GET Home Page
-router.get("/", function(request, response, next) {
+router.get("/", function (request, response, next) {
   const aboutRoutes = [
     "api/academy",
     "api/alumni",
@@ -42,13 +42,13 @@ router.get("/", function(request, response, next) {
     "api/research-examiners",
     "api/staff",
     "api/seab",
-    "api/faculty-fellows"
+    "api/faculty-fellows",
   ];
 
   const awardRoutes = [
     "api/prize-recipients",
     "api/research",
-    "api/publication"
+    "api/publication",
   ];
 
   const workshopRoutes = ["api/affiliates", "api/workshops"];
@@ -60,15 +60,17 @@ router.get("/", function(request, response, next) {
     aboutRoutes: aboutRoutes,
     awardRoutes: awardRoutes,
     workshopRoutes: workshopRoutes,
-    eventRoutes: eventRoutes
+    eventRoutes: eventRoutes,
   });
 });
 
 //--------------------------------------------------------------------------------------------------------------------------------------
-// PARTIALS
+// DOCUMENTATION
 // GET Workshop Buttons
-router.get("/workshop-buttons", function(request, response, next) {
-  response.render("Partials/workshopButtons", { title: "Workshop Buttons" });
+router.get("/docs", function (request, response, next) {
+  response.render("documentation", {
+    title: "apps.shingo.org | Documentation",
+  });
 });
 
 module.exports = router;
