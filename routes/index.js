@@ -70,6 +70,36 @@ router.get("/", function (request, response, next) {
 router.get("/docs", function (request, response, next) {
   response.render("documentation", {
     title: "apps.shingo.org | Documentation",
+    videos: [
+      {
+        url: "https://www.youtube.com/embed/lYF4vDEG_u8",
+        name: "Intro to App",
+      },
+      {
+        url: "https://www.youtube.com/embed/1Bp5IFodsy0",
+        name: "Views",
+      },
+      {
+        url: "https://www.youtube.com/embed/lZeBEpaaJl0",
+        name: "Routing",
+      },
+      {
+        url: "https://www.youtube.com/embed/b9qVFdSh9VA",
+        name: "API Routes (JSON)",
+      },
+      {
+        url: "https://www.youtube.com/embed/4oLvrQuT96k",
+        name: "Web Componenet Scripts",
+      },
+      {
+        url: "https://www.youtube.com/embed/MyxAb_hA9yQ",
+        name: "Creating a Basic Component",
+      },
+      {
+        url: "https://www.youtube.com/embed/DL9KAAFeQ40",
+        name: "Creating HTML with Javascript",
+      },
+    ],
   });
 });
 

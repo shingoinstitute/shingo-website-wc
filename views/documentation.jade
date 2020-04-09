@@ -3,3 +3,7 @@ extends layout
 block content
     div
         h1 Documentation Videos
+        each video in videos
+            h2=video.name
+            iframe(width="560" height="315" src=video.url frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="max-width: 98%")
+            
