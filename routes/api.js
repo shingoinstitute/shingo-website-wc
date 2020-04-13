@@ -505,7 +505,6 @@ router.get("/presentations/:conf?/:year?", function (req, res, next) {
         });
 
         res.send({
-          title: title,
           files: files,
           conference: title,
         });
