@@ -52,7 +52,7 @@ router.get("/", function (request, response, next) {
   ];
 
   const workshopRoutes = ["api/affiliates", "api/workshops"];
-  const eventRoutes = ["api/events"];
+  const eventRoutes = ["api/events", "api/presentations/international/2019"];
 
   // RENDER VIEW
   response.render("index", {
