@@ -36,23 +36,26 @@ setInterval(function () {
 // GET Home Page
 router.get("/", function (request, response, next) {
   const aboutRoutes = [
-    "api/academy",
-    "api/alumni",
-    "api/site-examiners",
-    "api/research-examiners",
-    "api/staff",
-    "api/seab",
-    "api/faculty-fellows",
+    "api/about/academy",
+    "api/about/alumni",
+    "api/about/site-examiners",
+    "api/about/research-examiners",
+    "api/about/staff",
+    "api/about/seab",
+    "api/about/faculty-fellows",
   ];
 
   const awardRoutes = [
-    "api/prize-recipients",
-    "api/research",
-    "api/publication",
+    "api/awards/prize-recipients",
+    "api/awards/research",
+    "api/awards/publication",
   ];
 
   const workshopRoutes = ["api/affiliates", "api/workshops"];
-  const eventRoutes = ["api/events", "api/presentations/international/2019"];
+  const eventRoutes = [
+    "api/events",
+    "api/events/presentations/international/2019",
+  ];
 
   // RENDER VIEW
   response.render("index", {
