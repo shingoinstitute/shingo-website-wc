@@ -18,6 +18,7 @@ var affiliateContainer = document.getElementById("div_block-8-152");
 var affiliateInfo = document.createElement("DIV");
 affiliateInfo.style.width = "85%";
 affiliateInfo.style.margin = "0 auto";
+affiliateInfo.style.textAlign = "left";
 
 // create element to store logo, website, and bio
 var bio = document.createElement("DIV");

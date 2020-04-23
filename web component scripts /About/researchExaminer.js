@@ -13,37 +13,37 @@ var examinerCommittee = [
   {
     Name: "Shaun Barker (Chair)",
     Position: "Assistant Director",
-    Company: "Shingo Institute"
+    Company: "Shingo Institute",
   },
   {
     Name: "Joanne Deys",
     Position: "President",
-    Company: "Brightside Alliance, LLC"
+    Company: "Brightside Alliance, LLC",
   },
   {
     Name: "Bruce Hamilton",
     Position: "President",
-    Company: "Greater Boston Manufacturing Partnership"
+    Company: "Greater Boston Manufacturing Partnership",
   },
   {
     Name: "Dale Lucht",
     Position: "Master Coach",
-    Company: "Discover Financial Services"
+    Company: "Discover Financial Services",
   },
   {
     Name: "Mike Martyn",
     Position: "Founder",
-    Company: "	SISU Consulting Group"
+    Company: "	SISU Consulting Group",
   },
   {
     Name: "Paul Terry",
     Position: "VP Supply Chain",
-    Company: "O.C. Tanner Company"
-  }
+    Company: "O.C. Tanner Company",
+  },
 ];
 
 var response = httpGet(
-  "https://shingo-website-wc.herokuapp.com/api/research-examiners"
+  "https://shingo-website-wc.herokuapp.com/api/about/research-examiners"
 );
 var reseachExaminers = response.research_examiners;
 var pubExaminers = response.publication_examiners;

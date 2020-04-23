@@ -9,7 +9,9 @@ function httpGet(theUrl) {
   return JSON.parse(xmlHttp.response);
 }
 
-var response = httpGet("https://shingo-website-wc.herokuapp.com/api/discover");
+var response = httpGet(
+  "https://shingo-website-wc.herokuapp.com/api/workshops/discover"
+);
 var workshopsContainer = document.getElementById("ELEMENT ID"); // INSERT ELEMENT ID HERE  ****
 workshopsContainer.style.display = "inline-block";
 

@@ -9,7 +9,7 @@ function httpGet(theUrl) {
 }
 
 var response = httpGet(
-  "https://shingo-website-wc.herokuapp.com/api/publication"
+  "https://shingo-website-wc.herokuapp.com/api/awards/publication"
 );
 var awards = response;
 var awardsContainer = document.getElementById("ELEMENT ID"); // INSERT ELEMENT ID HERE***
@@ -24,7 +24,7 @@ var backButton = document.createElement("IMG");
 backButton.src = "https://img.icons8.com/color/96/000000/circled-left-2.png";
 backButton.height = "96";
 
-backButton.addEventListener("click", function() {
+backButton.addEventListener("click", function () {
   var awardsContainer = document.getElementById("awardTable");
   awardsContainer.style.display = "";
 
@@ -111,7 +111,7 @@ for (let i = 0; i < awards.length; i++) {
   awardDate.style.padding = "12px";
 
   var awardNameLink = document.createElement("BUTTON");
-  awardNameLink.addEventListener("click", function() {
+  awardNameLink.addEventListener("click", function () {
     // retrieve information for clicked publication award
     var publicationAward = httpGet(
       "https://shingo-website-wc.herokuapp.com/api/publication/" + awards[i].Id

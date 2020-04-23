@@ -8,7 +8,9 @@ function httpGet(theUrl) {
   return JSON.parse(xmlHttp.response);
 }
 
-var response = httpGet("https://shingo-website-wc.herokuapp.com/api/research");
+var response = httpGet(
+  "https://shingo-website-wc.herokuapp.com/api/awards/research"
+);
 var awards = response;
 var awardsContainer = document.getElementById("ELEMENT ID"); // INSERT ELEMENT ID HERE***
 

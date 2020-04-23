@@ -21,7 +21,7 @@ function handleFilterAwards(type) {
 }
 
 var response = httpGet(
-  "https://shingo-website-wc.herokuapp.com/api/prize-recipients"
+  "https://shingo-website-wc.herokuapp.com/api/awards/prize-recipients"
 );
 var awards = response;
 var shingoPrizeContainer = document.getElementById("ELEMENT ID"); // INSERT ELEMENT ID HERE***

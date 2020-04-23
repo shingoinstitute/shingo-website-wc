@@ -8,7 +8,9 @@ function httpGet(theUrl) {
   return JSON.parse(xmlHttp.response);
 }
 
-var response = httpGet("https://shingo-website-wc.herokuapp.com/api/seab");
+var response = httpGet(
+  "https://shingo-website-wc.herokuapp.com/api/about/seab"
+);
 var members = response;
 var seabContainer = document.getElementById("ELEMENT ID"); // INSERT ID HERE***
 seabContainer.style.display = "inline-block";
@@ -29,7 +31,7 @@ backButton.id = "backButton";
 backButton.style.height = "96px";
 backButton.style.marginLeft = "20px";
 backButton.src = "https://img.icons8.com/color/96/000000/circled-left-2.png";
-backButton.addEventListener("click", function() {
+backButton.addEventListener("click", function () {
   var membersMainContainer = document.getElementById("membersMainContainer");
   membersMainContainer.style.display = "";
 
@@ -87,7 +89,7 @@ for (let i = 0; i < members.length; i++) {
   memberContainer.style.display = "inline-block";
   memberContainer.style.margin = "12px";
   memberContainer.style.verticalAlign = "top";
-  memberContainer.addEventListener("click", function() {
+  memberContainer.addEventListener("click", function () {
     // change display of members to none
     var membersMainContainer = document.getElementById("membersMainContainer");
     membersMainContainer.style.display = "none";

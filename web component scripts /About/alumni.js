@@ -8,7 +8,9 @@ function httpGet(theUrl) {
   return JSON.parse(xmlHttp.response);
 }
 
-var response = httpGet("https://shingo-website-wc.herokuapp.com/api/alumni");
+var response = httpGet(
+  "https://shingo-website-wc.herokuapp.com/api/about/alumni"
+);
 var members = response;
 var academyContainer = document.getElementById("ELEMENT ID"); // INSERT ID HERE***
 

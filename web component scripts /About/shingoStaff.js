@@ -8,7 +8,9 @@ function httpGet(theUrl) {
   return JSON.parse(xmlHttp.response);
 }
 
-var response = httpGet("https://shingo-website-wc.herokuapp.com/api/staff");
+var response = httpGet(
+  "https://shingo-website-wc.herokuapp.com/api/about/staff"
+);
 var staff = response;
 var shingoStaffContainer = document.getElementById("ELEMENT ID"); // INSERT ID HERE***
 shingoStaffContainer.style.display = "inline-block";
