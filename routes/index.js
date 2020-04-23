@@ -83,12 +83,8 @@ router.get("/docs", function (request, response, next) {
         name: "Views",
       },
       {
-        url: "https://www.youtube.com/embed/lZeBEpaaJl0",
+        url: "https://www.youtube.com/embed/OhvUqtlQrZM",
         name: "Routing",
-      },
-      {
-        url: "https://www.youtube.com/embed/b9qVFdSh9VA",
-        name: "API Routes (JSON)",
       },
       {
         url: "https://www.youtube.com/embed/4oLvrQuT96k",
