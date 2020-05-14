@@ -33,17 +33,11 @@ router.get("/", function (request, response, next) {
 
     //Format Dates and Workshop Names
     for (let i = 0; i < res.records.length; i++) {
-      var dateStringStart = res.records[i].Start_Date__c;
-      res.records[i].Start_Date__c = fecha.format(
-        new Date(dateStringStart),
-        "D"
-      );
+      let dateStringStart = res.records[i].Start_Date__c;
+      let dateStringEnd = res.records[i].End_Date__c;
 
-      var dateStringEnd = res.records[i].End_Date__c;
-      res.records[i].End_Date__c = fecha.format(
-        new Date(dateStringEnd),
-        "D MMM, YYYY"
-      );
+      res.records[i].Start_Date__c = fecha.format(new Date(dateStringStart), "D") + '-' + fecha.format(new Date(dateStringEnd), "D");
+      res.records[i].End_Date__c = fecha.format(new Date(dateStringEnd),"MMM, YYYY");
 
       res.records[i].End_Date__c = workshops.formatWorkshopDate(
         res.records[i].End_Date__c
@@ -88,17 +82,11 @@ router.get("/:workshopType", function (request, response, next) {
 
     //Format Dates
     for (let i = 0; i < res.records.length; i++) {
-      var dateStringStart = res.records[i].Start_Date__c;
-      res.records[i].Start_Date__c = fecha.format(
-        new Date(dateStringStart),
-        "D"
-      );
+      let dateStringStart = res.records[i].Start_Date__c;
+      let dateStringEnd = res.records[i].End_Date__c;
 
-      var dateStringEnd = res.records[i].End_Date__c;
-      res.records[i].End_Date__c = fecha.format(
-        new Date(dateStringEnd),
-        "D MMM, YYYY"
-      );
+      res.records[i].Start_Date__c = fecha.format(new Date(dateStringStart), "D") + '-' + fecha.format(new Date(dateStringEnd), "D");
+      res.records[i].End_Date__c = fecha.format(new Date(dateStringEnd),"MMM, YYYY");
 
       res.records[i].End_Date__c = workshops.formatWorkshopDate(
         res.records[i].End_Date__c

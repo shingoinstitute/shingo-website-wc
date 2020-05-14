@@ -66,7 +66,7 @@ for (let i = 0; i < affiliates.length; i++) {
   btn.style.borderRadius = "5px";
 
   var wrapperLink = document.createElement("A");
-  wrapperLink.href = "http://shingo.org/affiliates/" + affiliates[i].Id;
+  wrapperLink.href = "http://shingo.org/affiliates/" + affiliates[i].Page_Path__c;
   wrapperLink.target = "_blank";
   wrapperLink.style.color = "#333";
 
