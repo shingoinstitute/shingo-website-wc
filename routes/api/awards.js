@@ -31,6 +31,8 @@ router.get("/prize-recipients", function (request, response, next) {
         new Date(dateAwarded),
         "YYYY"
       );
+      if(res.records[i].SV_Status__c == 'The Shingo Prize'){
+        res.records[i].SV_Status__c = 'Shingo Prize'}; 
     }
 
     // SEND JSON
