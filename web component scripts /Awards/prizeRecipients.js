@@ -49,7 +49,7 @@ shingoPrizeTab.innerHTML = "Shingo Prize";
 shingoPrizeTab.style.padding = "12px";
 shingoPrizeTab.style.backgroundColor = "#eee";
 shingoPrizeTab.addEventListener("click", () => {
-  handleFilterAwards("The Shingo Prize");
+  handleFilterAwards("Shingo Prize");
 });
 shingoPrizeTab.addEventListener("mouseover", () => {
   document.getElementById("shingoPrizeTab").style.backgroundColor = "#ccc";
