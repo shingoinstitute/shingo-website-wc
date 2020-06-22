@@ -5,11 +5,11 @@ function httpGet(theUrl) {
   return JSON.parse(xmlHttp.response);
 }
 
-var response = httpGet("https://shingo-website-wc.herokuapp.com/api/workshops/discover");
+var response = httpGet("https://shingo-website-wc.herokuapp.com/api/workshops");
 var workshopsContainer = document.getElementById("%%ELEMENT_ID%%");
 workshopsContainer.style.display = "inline-block"
 
-var workshops = response;
+var workshops = response.workshops;
 
 for(let i = 0; i < workshops.length; i++) {
   // create workshop card
@@ -92,13 +92,13 @@ for(let i = 0; i < workshops.length; i++) {
   date.style.marginTop = "0px";
   
   var timezoneTitle = document.createElement("P");
-  timezoneTitle.innerHTML = "Time Zone/Location:";
+  timezoneTitle.innerHTML = "Location, Language:";
   timezoneTitle.style.margin = "5px 0px 0px 0px";
   timezoneTitle.style.fontWeight = "bold";
   
   // create element for timezone
   var timezone = document.createElement("P");
-  timezone.innerHTML = workshops[i].Timezone__c;
+  timezone.innerHTML = workshops[i].Timezone__c + ', ' + workshops[i].Language__c;
   timezone.style.margin = "0px";
     
   // create location element
