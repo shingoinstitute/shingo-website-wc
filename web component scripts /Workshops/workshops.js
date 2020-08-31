@@ -92,13 +92,13 @@ for(let i = 0; i < workshops.length; i++) {
   date.style.marginTop = "0px";
   
   var timezoneTitle = document.createElement("P");
-  timezoneTitle.innerHTML = "Time Zone/Location:";
+  timezoneTitle.innerHTML = "Language/Time zone:";
   timezoneTitle.style.margin = "5px 0px 0px 0px";
   timezoneTitle.style.fontWeight = "bold";
   
   // create element for timezone
   var timezone = document.createElement("P");
-  timezone.innerHTML = workshops[i].Timezone__c;
+  timezone.innerHTML = workshops[i].Language__c + ' in ' + workshops[i].Timezone__c;
   timezone.style.margin = "0px";
     
   // create location element

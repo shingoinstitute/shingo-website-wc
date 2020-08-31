@@ -92,7 +92,7 @@ for(let i = 0; i < workshops.length; i++) {
   date.style.marginTop = "0px";
   
   var timezoneTitle = document.createElement("P");
-  timezoneTitle.innerHTML = "Location, Language:";
+  timezoneTitle.innerHTML = "Language / Location";
   timezoneTitle.style.margin = "5px 0px 0px 0px";
   timezoneTitle.style.fontWeight = "bold";
   
