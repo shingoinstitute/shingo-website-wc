@@ -33,7 +33,7 @@ router.get("/academy", function (request, response, next) {
 router.get("/alumni", function (request, response, next) {
   //Query SalesForce
   const query =
-    "Select Id, Name, Account.Name, Title From Contact Where Shingo_Prize_Relationship__c Includes ('Alumni') ORDER BY LastName";
+    "Select Id, Name, Account.Name, Title, Alumni_Recognition_Year__c From Contact Where Shingo_Prize_Relationship__c Includes ('Alumni') ORDER BY LastName";
   conn.query(query, function (err, res) {
     if (err) {
       return console.error(err);
