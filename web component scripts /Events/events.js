@@ -14,9 +14,10 @@ function httpGet(theUrl) {
 // and depending on what type it is, it appends it to the
 // correct DIV element
 
-var conferencesContainer = document.getElementById("ELEMENT ID"); // ELEMENT ID FOR CONFERENCES AND SUMMITS CONTAINER
-var studyToursContainer = document.getElementById("ELEMENT ID"); // ELEMENT ID FOR STUDY TOURS CONTAINER
-var showcasesContainer = document.getElementById("ELEMENT ID"); // ELEMENT ID FOR SHOWCASES CONTAINER
+var conferencesContainer = document.getElementById("div_block-2-628"); // ELEMENT ID FOR CONFERENCES AND SUMMITS CONTAINER
+var studyToursContainer = document.getElementById("div_block-4-628"); // ELEMENT ID FOR STUDY TOURS CONTAINER
+var showcasesContainer = document.getElementById("div_block-16-628"); // ELEMENT ID FOR SHOWCASES CONTAINER
+var webinarsContainer = document.getElembentById("div_block-33-88"); //ELEMENT ID FOR WEBINAR CONTAINER
 var response = httpGet("https://shingo-website-wc.herokuapp.com/api/events");
 
 for (let i = 0; i < response.length; i++) {
@@ -90,6 +91,8 @@ for (let i = 0; i < response.length; i++) {
     conferencesContainer.appendChild(eventCard);
   } else if (response[i].Event_Type__c === "Study Tour") {
     studyToursContainer.appendChild(eventCard);
+  }else if (response[i].Event_Type__c === "Webinar"){
+    webinarsContainer.appendChild(eventCard);
   } else {
     showcasesContainer.appendChild(eventCard);
   }
