@@ -50,8 +50,8 @@ router.get("/", function (request, response, next) {
         workshopTypes.push(res.records[i].Workshop_Type__c);
       }
 
-      if (!workshopCountries.includes(res.records[i].Event_Country__c)) {
-        workshopCountries.push(res.records[i].Event_Country__c);
+      if (!workshopCountries.includes(res.records[i].Country__c)) {
+        workshopCountries.push(res.records[i].Country__c);
       }
     }
 
