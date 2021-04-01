@@ -19,7 +19,7 @@ conn.login(
 router.get("/", function (request, response, next) {
   //Query SalesForce
   const query =
-    "SELECT Id, Name, Logo__c, Page_Path__c, Website, Languages__c, Workshops_Certified_For__c, Examiner_Staff__c FROM Account WHERE RecordType.Name='Licensed Affiliate' AND (NOT Name LIKE 'McKinsey%') AND (NOT Name LIKE 'Shingo Institute%') AND (NOT Name LIKE 'MyEducator%') ORDER BY Name ASC";
+    "SELECT Id, Name, Logo__c, Page_Path__c, Website, Languages__c, Workshops_Certified_For__c, Examiner_Staff__c FROM Account WHERE RecordType.Name='Licensed Affiliate' AND (NOT Name LIKE 'McKinsey%') AND (NOT Name LIKE 'Shingo Institute%') AND (NOT Name LIKE 'MyEducator%') AND (NOT Name LIKE 'BHP%') ORDER BY Name ASC";
   conn.query(query, function (err, res) {
     if (err) {
       return console.error(err);
