@@ -57,6 +57,9 @@ for (let i = 0; i < members.length; i++) {
   var tableRow = document.createElement("TR");
   tableRow.style.textAlign = "left";
 
+  tableRow.setAttribute("year", members[i].Alumni_Recognition_Year__c);
+  tableRow.classList.add("alumni-members");
+
   var memberName = document.createElement("TD");
   memberName.innerHTML = members[i].Name;
   memberName.style.padding = "18px";
