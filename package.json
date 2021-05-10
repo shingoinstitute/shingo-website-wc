@@ -18,7 +18,7 @@
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "jsforce": "^1.9.3",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "morgan": "~1.9.1",
     "nodemon": "^1.19.3",
     "request-promise": "^4.2.5",
