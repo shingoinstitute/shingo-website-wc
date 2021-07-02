@@ -19,7 +19,7 @@ conn.login(
 router.get("/", function (request, response, next) {
   //Query SalesForce
   const query =
-    "SELECT Id, Name, Logo__c, Page_Path__c, Website, Languages__c, Workshops_Certified_For__c, Examiner_Staff__c FROM Account WHERE RecordType.Name='Licensed Affiliate' AND (NOT Name LIKE 'McKinsey%') AND (NOT Name LIKE 'Shingo Institute%') AND (NOT Name LIKE 'MyEducator%') AND (NOT Name LIKE 'BHP%') ORDER BY Name ASC";
+    "SELECT Id, Name, Logo__c, Page_Path__c, Website, Languages__c Examiner_Staff__c FROM Account WHERE RecordType.Name='Licensed Affiliate' AND (NOT Name LIKE 'McKinsey%') AND (NOT Name LIKE 'Shingo Institute%') AND (NOT Name LIKE 'MyEducator%') AND (NOT Name LIKE 'BHP%') ORDER BY Name ASC";
   conn.query(query, function (err, res) {
     if (err) {
       return console.error(err);
@@ -43,7 +43,7 @@ router.get("/:id", function (request, response, next) {
 
     //Query Salesforce again for affiliate info
     query =
-      "SELECT Name, Id, Logo__c, Page_Path__c, Website, Languages__c, Locations__c, Industry_List__c, Summary__c, Public_Contact__c, Public_Contact_Email__c, Public_Contact_Phone__c, Affiliate_Induction_Year__c FROM Account WHERE RecordType.Name='Licensed Affiliate' AND Account.Id =" +
+      "SELECT Name, Id, Logo__c, Page_Path__c, Website, Languages__c, Locations__c, Industry_List__c, Summary__c, Public_Contact__c, Public_Contact_Email__c, Public_Contact_Phone__c, Affiliate_Induction_Year__c, Workshops_Certified_For__c FROM Account WHERE RecordType.Name='Licensed Affiliate' AND Account.Id =" +
       "'" +
       request.params.id +
       "'";
